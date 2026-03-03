@@ -6,7 +6,7 @@
 	<title>Forms homeworks</title>
 </head>
 <body>
-	<form action="#" method="post">
+	<form id="my_form" onsubmit="alert(decodeURI(new URLSearchParams(Array.from(new FormData(document.getElementById('my_form')))).toString()));return false;" method="post">
 		<!-- Name input -->
 		<label for="name">Повне ім'я</label>
 		<input type="text" id="name" name="name" required>
@@ -25,10 +25,10 @@
 		<br><br>
 		<!-- Radio(gender) input -->
 		<span>Стать</span>
-		<input type="radio" name="gender" id="gender_man" checked>
+		<input type="radio" name="gender" id="gender_male" value="male" checked>
 		<label for="gender_man">чоловіча</label>
-		<input type="radio" name="gender" id="gender_fman">
-		<label for="gender_fman">жіноча</label>
+		<input type="radio" name="gender" id="gender_fmale" value="female">
+		<label for="gender_fmale">жіноча</label>
 		<br><br>
 		<!-- Age input -->
 		<label for="age">Вік</label>
