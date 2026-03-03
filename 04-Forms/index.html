@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Forms homeworks</title>
+</head>
+<body>
+	<form action="#" method="post">
+		<!-- Name input -->
+		<label for="name">Повне ім'я</label>
+		<input type="text" id="name" name="name" required>
+		<br>
+		<br>
+		<!-- Email input -->
+		<label for="email">Email</label>
+		<input type="email" id="email" name="email" required>
+		<br><br>
+		<!-- pass input -->
+		<label for="pass">Пароль</label>
+		<input type="password" name="password" id="pass" required>
+		<br><br>
+		<label for="pass_conf">Пароль ще раз</label>
+		<input type="password" name="pass_confirm" id="pass_conf" required>
+		<br><br>
+		<!-- Radio(gender) input -->
+		<span>Стать</span>
+		<input type="radio" name="gender" id="gender_man" checked>
+		<label for="gender_man">чоловіча</label>
+		<input type="radio" name="gender" id="gender_fman">
+		<label for="gender_fman">жіноча</label>
+		<br><br>
+		<!-- Age input -->
+		<label for="age">Вік</label>
+		<input type="number" min="1" max="120" name="userage" id="age" required>
+		<br><br>
+		<!-- course input -->
+		<label for="course">Курс</label>
+		<select name="course" id="course" required>
+			<option value="" disabled selected>-=Виберіть курс=-</option>
+			<option value="frontend">Front-End</option>
+			<option value="backend">Back-End</option>
+			<option value="QA">QA Manual</option>
+			<option value="PManager">Project Managerment</option>
+		</select>
+		<br><br>
+		<!-- address input -->
+		<label for="address">Повна адреса</label>
+		<textarea name="address" rows="6" placeholder="Країна, регіон, місто/селище, вулиця" required></textarea>
+		<br><br>
+		<!-- consent input -->
+		 <input type="checkbox" name="consent" id="consent" required>
+		 <label for="consent">Я погоджуюсь з обробкою персональних даних</label>
+		 <br><br>
+		 <button type="reset">Очистити форму</button>
+		 <button type="submit">Зареєструватися</button>
+	</form>
+</body>
+</html>
