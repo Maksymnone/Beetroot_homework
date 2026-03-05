@@ -1,0 +1,22 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Open Sans",sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+.container {
+	width: min(970px, 80%);
+	margin: 0 auto;
+}
+
+.inline {
+	display: inline-block;
+}
