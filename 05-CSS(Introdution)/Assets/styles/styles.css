@@ -16,25 +16,37 @@ a {
 	display: inline-block;
 }
 
+h2 {
+	font-size: 2.125rem;
+}
+
+
 .container {
 	width: min(970px, 80%);
 	margin: 0 auto;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	text-align: center;
+}
+
+.hero_container,
+.header-container {
+	margin: 0 auto;
+	width: min(970px, 80%);
 }
 
 .bggrey {
 	background-color: #E5E5E5;
 }
 
-header {
+.header-container {
 	border-bottom: #828282 1px solid;
 }
 
-.container-header {
-	width: 70%;
+.nav-list {
 	margin: 0 auto;
-	padding: 0 auto;
+	width: 70%;
 	height: 80px;
-	
 }
 
 
@@ -59,6 +71,8 @@ header {
 	width: 100vw;
 }
 
+
+
 .hero__title {
 	font-size: 3rem;
 	margin-top: 12px;
@@ -73,18 +87,14 @@ header {
 /* About section style START */
 
 .about-container {
-	margin: 0 auto;
-	padding-top: 100px;
-	padding-bottom: 100px;
 	width: 50%;
-	text-align: center;
 }
 
 .about__title {
 	font-size: 2.125rem;
 }
 
-.about__text {
+.about__text{
 	font-size: 1.125rem;
 	width: 90%;
 	margin: 0 auto;
@@ -98,3 +108,97 @@ header {
 	margin-top: 30px;
 }
 
+/* Skills section style START */
+
+
+.skills__title-text {
+	font-size: 1.125rem;
+	margin-top: 20px;
+}
+
+.cards {
+	margin-top: 50px;
+}
+
+.cards__item:not(:last-child) {
+	margin-right: 97px;
+}
+
+.cards__text {
+	font-size: 0.875rem;
+	font-weight: bold;
+	color: #828282;
+	margin: 25px auto 0;
+	width: 70%;
+	
+}
+
+.cards__star-container {
+	margin-top: 60px;
+}
+
+.cards__star-container:last-child {
+	margin-top: 70px;
+}
+
+.cards__item:last-of-type .cards__img {
+	padding-bottom: 16px;
+}
+/* Skills section style END */
+
+/* Portfolio section style START*/
+
+.portfolio__item {
+	margin-top: 70px;
+	&:first-child {
+		margin-top: 50px;
+	}
+}
+
+.portfolio__text {
+	margin-top: 40px;
+	font-size: 1.125rem;
+	text-decoration: underline;
+}
+
+/* Portfolio section style END*/
+
+/* Footer style START */
+
+.footer__text {
+	margin: 25px auto 0;
+	font-size: 1.125rem;
+	width: 280px;
+	
+}
+
+.footer__button-container {
+	margin-top: 60px;
+}
+
+.footer__list-container {
+	margin-top: 30px;
+}
+
+.footer__button {
+	display: inline-block;
+	border: 1px solid #070707;
+	border-radius: 22px;
+	background-color: #070707;
+	text-decoration: none;
+	color: #E5E5E5;
+	width: 180px;
+	height: 44px;
+	line-height: 44px;
+}
+
+.footer__list-item:not(:last-child) {
+	margin-right: 50px;
+}
+footer p:last-child {
+	margin: 60px auto 0;
+	color:#828282;
+	font-size: 0.825rem;
+	width: 200px;
+}
+/* Footer style END */
