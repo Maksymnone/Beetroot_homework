@@ -8,6 +8,10 @@ body {
 	color:#070707;
 }
 
+li {
+	list-style: none;
+}
+
 a {
 	text-decoration: none;
 	color: inherit;
@@ -17,7 +21,7 @@ a {
 	display: inline-block;
 }
 
-h2 {
+.section-title {
 	font-size: 2.125rem;
 }
 
@@ -69,11 +73,6 @@ h2 {
 }
 /* Hero section style START */
 
-.hero {
-	width: 100vw;
-}
-
-
 
 .hero__title {
 	font-size: 3rem;
@@ -90,10 +89,6 @@ h2 {
 
 .about-container {
 	width: 50%;
-}
-
-.about__title {
-	font-size: 2.125rem;
 }
 
 .about__text{
