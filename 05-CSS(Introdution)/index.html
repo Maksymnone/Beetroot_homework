@@ -14,21 +14,21 @@
 	<header>
 		<div class="header-container ">
 			<nav>
-				<ul class="nav-list">
+				<ul class="nav-list" id="home">
 					<li class="nav-list__element inline">
-						<a href="" class="nav-list__link">Home</a>
+						<a href="#home" class="nav-list__link">Home</a>
 					</li>
 					<li class="nav-list__element inline">
-						<a href="" class="nav-list__link">About me</a>
+						<a href="#about" class="nav-list__link">About me</a>
 					</li>
 					<li class="nav-list__element inline">
-						<a href="" class="nav-list__link">Skills</a>
+						<a href="#skills" class="nav-list__link">Skills</a>
 					</li>
 					<li class="nav-list__element inline">
-						<a href="" class="nav-list__link">Portfolio</a>
+						<a href="#portfolio" class="nav-list__link">Portfolio</a>
 					</li>
 					<li class="nav-list__element inline">
-						<a href="" class="nav-list__link">Contacts</a>
+						<a href="#contacts" class="nav-list__link">Contacts</a>
 					</li>
 				</ul>
 			</nav>
@@ -41,7 +41,7 @@
 				<img src="./Assets/images/HeroImg.jpg" alt="foto portrai of Denis Novik">
 			</div>
 		</section>
-		<section class="about bggrey" >
+		<section class="about bggrey" id="about" >
 			<div class="about-container container ">
 				<h2 class="about__title">About me</h2>
 				<p class="about__text">Hi, I'm Denis – UX/UI designer from Minsk. I'm interested in design and everything connected with it.</p>
@@ -49,7 +49,7 @@
 				<p class="about__text">Ready to implement excellent projects with wonderful people.</p>
 			</div>
 		</section>
-		<section class="skills" >
+		<section class="skills" id="skills">
 			<div class="skills-container container ">
 				<h2 class="skills__title">Skills</h2>
 				<p class="skills__title-text">I work in such programs as</p>
@@ -101,26 +101,26 @@
 				</ul>
 			</div>
 		</section>
-		<section class="portfolio bggrey" >
+		<section class="portfolio bggrey" id="portfolio">
 			<div class="portfolio-container container ">
 				<h2 class="portfolio__title">Portfolio</h2>
 				<ul class="portfolio__list">
 					<li class="portfolio__item">
 						<figure>
 							<img src="./Assets/images/Portfolio1.jpg" alt="Fashion store web-page" class="portfolio__img">
-							<figcaption class="portfolio__text">Online fashion store - Homepage</figcaption>
+							<figcaption class="portfolio__text"><a href="#">Online fashion store - Homepage</a></figcaption>
 						</figure>
 					</li>
 					<li class="portfolio__item">
 						<figure>
 							<img src="./Assets/images/Portfolio2.jpg" alt="Reebok web-page" class="portfolio__img">
-							<figcaption class="portfolio__text">Reebok Store - Concept</figcaption>
+							<figcaption class="portfolio__text"><a href="#">Reebok Store - Concept</a></figcaption>
 						</figure>
 					</li>
 					<li class="portfolio__item">
 						<figure>
 							<img src="./Assets/images/Portfolio3.jpg" alt="Braun Landing Page" class="portfolio__img">
-							<figcaption class="portfolio__text">Braun Landing Page - Concept</figcaption>
+							<figcaption class="portfolio__text"><a href="#">Braun Landing Page - Concept</a></figcaption>
 						</figure>
 					</li>
 				</ul>
@@ -128,7 +128,7 @@
 		</section>
 	</main>
 	<footer>
-		<div class="footer-container container ">
+		<div class="footer-container container " id="contacts">
 			<h2 class="footer__title">Contacts</h2>
 			<p class="footer__text">Want to know more or just chat? You are welcome!</p>
 			<div class="footer__button-container">

@@ -10,6 +10,7 @@ body {
 
 a {
 	text-decoration: none;
+	color: inherit;
 }
 
 .inline {
@@ -63,7 +64,8 @@ h2 {
 }
 
 .nav-list__link:hover {
-	color: #070707
+	color: #070707;
+	text-shadow: 0px 0px 1.5px #070707;
 }
 /* Hero section style START */
 
@@ -190,11 +192,22 @@ h2 {
 	width: 180px;
 	height: 44px;
 	line-height: 44px;
+	&:hover {
+		color: #070707;
+		font-weight: 500;
+		background-color: #E5E5E5;
+		transition: all 0.2s ease-in-out;
+	}
 }
 
 .footer__list-item:not(:last-child) {
 	margin-right: 50px;
 }
+
+.footer__list-item:hover {
+	scale: 1.25;
+}
+
 footer p:last-child {
 	margin: 60px auto 0;
 	color:#828282;
