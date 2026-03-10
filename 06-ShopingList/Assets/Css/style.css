@@ -50,6 +50,7 @@ input[type=checkbox] {
 	scale: 2.7;
 	border-radius: 0;
 	margin-right: 15px;
+	accent-color: white;
 }
 
 label {
