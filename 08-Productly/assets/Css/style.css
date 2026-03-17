@@ -64,6 +64,10 @@ header {
 		align-items: center;
 		height: 100%;
 	}
+	.btn-wrap {
+		display: flex;
+		gap: 32px;
+	}
 }
 
 .main-menu ul {
@@ -83,10 +87,7 @@ header {
 	}
 }
 
-.btn-wrap {
-	display: flex;
-	gap: 32px;
-}
+
 
 
 .btn {
@@ -130,12 +131,11 @@ header .btn {
 }
 
 
-.hero {
+.hero,.Effort {
 	padding: 90px 0;
 	.container {
 		display: flex;
 		justify-content: space-between;
-		/* gap:60px; */
 		align-items: center;
 	}
 }
@@ -160,6 +160,108 @@ header .btn {
 
 .hero_img {
 	width: 55%;
+}
+
+
+/*  START Tools section style */
+
+
+.tools {
+	padding-bottom: 90px;
+	background-image: url(./../images/Feat_BG.webp);
+	background-repeat: no-repeat;
+	background-position: left 50% bottom 7px;
+	background-size: 100% auto;
+	h2 {
+		text-align: center;
+		margin: 0 auto;
+		max-width: 540px;
+		margin-bottom: 50px;
+		font-size: 2.25rem;
+		line-height: 1.2;
+	}
+	.btn-wrap {
+		text-align: center;
+	}
+}
+
+
+.tools__list {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	padding: 0 15px;
+	margin-bottom: 60px;
+	li h3 {
+		font-size: 1.375rem;
+		margin-bottom: 16px;
+	}
+	li p {
+		line-height: 1.625rem;
+	}
+}
+.tools__item {
+	width: 270px;
+}
+
+.tools__icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	margin-bottom: 30px;
+	background-color: #888;
+	margin-bottom: 30px;
+	border-radius: 15px;
+	&.violet {
+		background-color: #7752BE;
+	}
+	&.orange {
+		background-color: #FAB005;
+	}
+	&.red {
+		background-color: #F03E3D;
+	}
+	&.blue {
+		background-color: #4DADF7;
+	}
+}
+
+
+/* END Tools section style */
+
+/* START Effort section style */
+
+.Effort {
+	.container {
+		gap: 165px;
+	}
+}
+
+.Effort__img {
+	width: 75%;
+}
+
+.Effort__content {
+	width: 80%;
+	h2 {
+		display: flex;
+		flex-direction: column;
+		font-size: 1rem;
+		line-height: 1.625rem;
+		font-weight: 400;
+		span {
+			font-size: 2.25rem;
+			font-weight: 700;
+			line-height: 2.625rem;
+		}
+		margin-bottom: 20px;
+	}
+	p {
+		line-height: 1.75rem;
+
+	}
 }
 
 
