@@ -131,7 +131,7 @@ header .btn {
 }
 
 
-.hero,.Effort {
+.hero,.Effort,.Product {
 	padding: 90px 0;
 	.container {
 		display: flex;
@@ -147,6 +147,7 @@ header .btn {
 		font-size: 2.75rem;
 		line-height: 3.375rem;
 		margin-bottom: 20px;
+		color: var(--brown-dark);
 	}
 	p {
 		font-size: 1.125rem;
@@ -179,6 +180,7 @@ header .btn {
 		margin-bottom: 50px;
 		font-size: 2.25rem;
 		line-height: 1.2;
+		color: var(--brown-dark);
 	}
 	.btn-wrap {
 		text-align: center;
@@ -195,6 +197,7 @@ header .btn {
 	li h3 {
 		font-size: 1.375rem;
 		margin-bottom: 16px;
+		color: var(--brown-dark);
 	}
 	li p {
 		line-height: 1.625rem;
@@ -239,29 +242,56 @@ header .btn {
 	}
 }
 
-.Effort__img {
+.Effort__img,.Product__img {
 	width: 75%;
 }
 
-.Effort__content {
+.Effort__content,.Product__content {
 	width: 80%;
+	padding-top: 34px;
 	h2 {
 		display: flex;
 		flex-direction: column;
 		font-size: 1rem;
 		line-height: 1.625rem;
 		font-weight: 400;
+		color: var(--brown-dark);
+		letter-spacing: 0.1px;
 		span {
 			font-size: 2.25rem;
 			font-weight: 700;
-			line-height: 2.625rem;
+			line-height: 2.8rem;
 		}
 		margin-bottom: 20px;
 	}
 	p {
-		line-height: 1.75rem;
-
+		line-height: 1.65rem;
+		margin-bottom: 40px;
+		width: 90%;
+		letter-spacing: 0.1px;
 	}
 }
 
+.Effort__item { 
+	h3 {
+	color: var(--brown-dark);
+	font-size: 1rem;
+	line-height: 1.75rem;
+	}
+	& p {
+		line-height: 1.75rem;
+		margin-bottom: 25px;
+	}
+}
 
+/* END Effort section style */
+
+/* START Product section style */
+
+.Product {
+	padding: 0 0 90px 0;
+	.container{
+	flex-direction: row-reverse;
+	gap: 165px;
+	}
+}
