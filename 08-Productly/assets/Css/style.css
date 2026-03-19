@@ -471,6 +471,12 @@ header .btn {
 		font-size: 1.125rem;
 		line-height: 1.75rem;
 		margin-bottom: 12px;
+		&:hover {
+			color: var(--orange);
+		}
+		&:active {
+			color: var(--coral);
+		}
 	}
 }
 
