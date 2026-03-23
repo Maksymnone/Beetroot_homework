@@ -17,9 +17,11 @@
 					</a>
 				</div>
 				<div class="header__content">
-					<div class="header__nav">
-						<span>documentation</span> <span>/</span> <span>who`s using</span>
-					</div>
+					<ul class="header__nav">
+						<li><a>documentation</a></li> 
+						<li>/</li>
+						<li><a>who`s using</a></li>
+					</ul>
 					<div class="header__lang_switcher-wrap">
 						<a href="#" class="header__lang_switcher">eng</a>
 					</div>
@@ -47,6 +49,42 @@
 					of React Native, it helps to understand React itself. This section can get you started or can serve as a refresher
 					course.</p>
 					<p>We’re going to cover the core concepts behind React:</p>
+					<ul class="fundamentals__list">
+						<li class="fundamentals__item">
+							<strong>components.</strong> The rest of this introduction to React uses cats in its examples: friendly, approachable creatures that
+							need names and a cafe to work in.
+						</li>
+						<li class="fundamentals__item">
+							<strong>JSX.</strong> React and React Native use JSX, a syntax that lets you write elements inside JavaScript like so: &lt;Text&gt;Hello, I
+							am your cat!&lt;/Text&gt;.
+						</li>
+					</ul>
+					<p class="fundamentals__phar-mid">
+						The React docs have <a>a comprehensive guide to JSX</a> you can refer to learn even more. Because JSX is JavaScript,
+						you can
+						use variables inside it. Here you are declaring a name for the cat, name, and embedding it with curly braces inside
+						&lt;Text&gt;
+					</p>
+					<ul>
+						<li class="fundamentals__item">
+							<strong>props.</strong> Props is short for “properties”.
+						</li>
+						<li class="fundamentals__item">
+							<strong>state.</strong> While you can think of props as arguments you use to configure how components render, state is like a component’s
+							personal data storage. State is useful for handling data that changes over time or that comes from user interaction.
+							State gives your components memory!
+						</li>
+					</ul>
+				</section>
+				<section class="handling_section section">
+					<h2>handling text input<sup>Chapter 4</sup></h2>
+					<p>TextInput is a Core Component that allows the user to enter text. It has an <em>onChangeText</em> prop that takes a function to
+					be called every time the text changed, and an onSubmitEditing prop that takes a function to be called when the text is
+					submitted.</p>
+					<p>
+					For example, let's say that as the user types, you're translating their words into a different language. In this new
+					language, every single word is written the same way: 🍕. So the sentence "Hello there Bob" would be translated as "🍕 🍕".
+					</p>
 				</section>
 			</div>
 		</main>
