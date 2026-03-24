@@ -7,6 +7,31 @@
 .page-wrapper {
 	width: min(90%, 1200px);
 	margin: 0 auto;
+	display: grid;
+	grid-template-columns:1fr 2fr;
+	grid-template-areas: 
+	"aside main"
+	;
+	column-gap: 22px;
+	padding-top: 87px;
+}
+
+	
+header {
+	position: fixed;
+	width: 100%;
+	height: 80px;
+	top: 0;
+	left: 0;
+	background-color: #fff;
+	z-index: 100;
+}
+aside {
+	grid-area: aside;
+}
+
+main {
+	grid-area: main;
 }
 
 li {
@@ -14,6 +39,8 @@ li {
 }
 
 .header__container {
+	width: min(90%, 1200px);
+	margin: 0 auto;
 	display: flex;
 	flex-direction: row-reverse;
 	justify-content: space-between;
@@ -60,7 +87,9 @@ li {
 }
 
 .section {
+	position: relative;
 	margin-top: 63px;
+	padding-top: 23px;
 	h2 {
 		font-family: 'Francois One';
 		font-style: normal;
@@ -78,7 +107,7 @@ li {
 			margin-left: 7px;
 			letter-spacing: 1px;
 			position: relative;
-			top: -14px;
+			top: -10px;
 		}
 	}
 	p,li {
@@ -96,6 +125,15 @@ li {
 			font-style: italic;
 			font-weight: 400;
 		}
+	}
+	&::before {
+		content: "";
+		width: 100px;
+		height: 8px;
+		background-color: black;
+		position: absolute;
+		top: 0;
+		left: 0;	
 	}
 }
 
@@ -136,3 +174,33 @@ li {
 		margin-bottom: 25px;
 	}
 }
+
+.aside-container {
+	position: sticky;
+	top:80px;
+}
+
+.aside__item {
+	font-family: 'Francois One';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 2.25rem;
+	text-transform: uppercase;
+	line-height: 3rem;
+	margin-bottom: 40px;
+	letter-spacing: 1.6px;
+	margin-top: 75px;
+	margin-left: 10px;
+	padding-bottom: 7px;
+	a {
+		text-decoration: none;
+		color: black;
+	}
+	border-bottom: 1px solid #DADADA ;
+}
+
+.aside__nav {
+	margin-top: 63px;
+}
+
+
