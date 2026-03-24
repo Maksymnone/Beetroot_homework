@@ -1,0 +1,82 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.page-wrapper {
+	width: min(90%, 1200px);
+	margin: 0 auto;
+	padding-top: 80px;
+}
+
+li {
+	list-style: none;
+}
+
+
+header {
+	position: fixed;
+	width: 100%;
+	height: 80px;
+	top: 0;
+	left: 0;
+	background-color: #fff;
+	z-index: 100;
+}
+
+
+.header__container {
+	width: min(90%, 1200px);
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+	align-items: center;
+	padding: 13px 0;
+}
+
+.header__content {
+	display: flex;
+	align-items: start;
+	flex-direction: row-reverse;
+	gap: 50px;
+}
+
+.header__nav {
+	display: flex;
+	padding-left: 5px;
+	flex-direction: row;
+	gap: 11px;
+	font-family: 'Staatliches';
+	font-size: 1.375rem;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.header__lang_switcher-wrap {
+	line-height: 18px;
+}
+
+.header__lang_switcher {
+	padding-left: 4px;
+	width: 50px;
+	text-decoration: none;
+	font-family: 'Tourney';
+	font-weight: 600;
+	font-size: 1.375rem;
+	text-transform: uppercase;
+	color: black;
+}
+
+.cards__list {
+	display: grid;
+	grid-template-rows: 180px 180px;
+	grid-template-columns: repeat(4,1fr);
+	gap: 30px;
+}
+
+
+

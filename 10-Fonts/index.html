@@ -31,29 +31,29 @@
 		<aside>
 			<div class="aside-container">
 				<ul class="aside__nav">
-					<li class="aside__item"><a href="#">Introduction</a></li>
-					<li class="aside__item"><a href="#">core components</a></li>
-					<li class="aside__item"><a href="#">react fundamentals</a></li>
-					<li class="aside__item"><a href="#">handling text input</a></li>
+					<li class="aside__item"><a href="#intro">Introduction</a></li>
+					<li class="aside__item"><a href="#components">core components</a></li>
+					<li class="aside__item"><a href="#fundamentals">react fundamentals</a></li>
+					<li class="aside__item"><a href="#handling">handling text input</a></li>
 				</ul>
 			</div>
 		</aside>
 		<main>
 			<div class="main__container">
-				<section class="intro_section section">
+				<section class="intro_section section" id="intro">
 					<h2>Introduction<sup>Chapter 1</sup></h2>
 					<p>Welcome to the very start of your React Native journey! If you're looking for environment setup instructions, they've
 					moved to <a>their own section</a>. Continue reading for an introduction to the documentation, Native Components, React, and
 					more!</p>
 				</section>
-				<section class="components_section section">
+				<section class="components_section section" id="components">
 					<h2>core components<sup>Chapter 2</sup></h2>
 					<p>React Native is an open source framework for building Android and iOS applications using React and the app platform’s
 					native capabiles. With React Native, you use JavaScript to access your platform’s APIs as well as to describe the
 					appearance and behavior of your UI using React components: <em>bundles of reusable, nestable code</em>. You can learn more about
 					React in the next section. But first, let’s cover how components work in React Native.</p>
 				</section>
-				<section class="fundamentals_section section">
+				<section class="fundamentals_section section" id="fundamentals">
 					<h2>react fundamentals<sup>Chapter 3</sup></h2>
 					<p>React Native runs on React, a popular open source library for building user interfaces with JavaScript. To make the most
 					of React Native, it helps to understand React itself. This section can get you started or can serve as a refresher
@@ -65,18 +65,18 @@
 							need names and a cafe to work in.
 						</li>
 						<li class="fundamentals__item">
-							<strong>JSX.</strong> React and React Native use JSX, a syntax that lets you write elements inside JavaScript like so: &lt;Text&gt;Hello, I
-							am your cat!&lt;/Text&gt;.
+							<strong>JSX.</strong> React and React Native use JSX, a syntax that lets you write elements inside JavaScript like so:<span class="bg-grey"> &lt;Text&gt;Hello, I
+							am your cat!&lt;/Text&gt;</span>.
 						</li>
 					</ul>
 					<p class="fundamentals__phar-mid">
 						The React docs have <a>a comprehensive guide to JSX</a> you can refer to learn even more. Because JSX is JavaScript,
 						you can
-						use variables inside it. Here you are declaring a name for the cat, name, and embedding it with curly braces inside
-						&lt;Text&gt;
+						use variables inside it. Here you are declaring a name for the cat, <span class="bg-grey">name</span>, and embedding it with curly braces inside
+						<span class="bg-grey">&lt;Text&gt;</span>
 					</p>
-					<ul>
-						<li class="fundamentals__item">
+					<ul class="fundamentals__list">
+						<li class="fundamentals__item mb-43">
 							<strong>props.</strong> Props is short for “properties”.
 						</li>
 						<li class="fundamentals__item">
@@ -86,7 +86,7 @@
 						</li>
 					</ul>
 				</section>
-				<section class="handling_section section">
+				<section class="handling_section section" id="handling">
 					<h2>handling text input<sup>Chapter 4</sup></h2>
 					<p>TextInput is a Core Component that allows the user to enter text. It has an <em>onChangeText</em> prop that takes a function to
 					be called every time the text changed, and an onSubmitEditing prop that takes a function to be called when the text is
