@@ -71,6 +71,10 @@ li {
 	font-size: 1.375rem;
 	text-transform: uppercase;
 	letter-spacing: 0.5px;
+	a {
+		text-decoration: none;
+		color: black;
+	}
 }
 
 .header__lang_switcher-wrap {
