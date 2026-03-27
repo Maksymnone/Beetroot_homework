@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Forms Styling</title>
+	<link rel="stylesheet" href="./Assets/Css/fonts.css">
+	<link rel="stylesheet" href="./Assets/Css/all.min.css">
+	<link rel="stylesheet" href="./Assets/Css/style.css">
+</head>
+<body>
+	<div class="page-wrapper">
+		<!-- create section -->
+		<div class="container">
+			<div class="form-container create-container">
+				<h1>Create an Account</h1>
+				<form action="#" method="post">
+					<div class="form-inner">
+						<div class="form-cols">
+							<div class="form-row">
+								<label for="firstName">First Name</label>
+								<input type="text" id="firstName">
+							</div>
+							<div class="form-row">
+								<label for="lastName">Last Name</label>
+								<input type="text" id="lastName">
+							</div>
+						</div>
+						<div class="form-row">
+							<label for="email">E-mail</label>
+							<input type="email" id="email">
+							<p class="email-hint">We'll never share your email with anyone else.</p>
+						</div>
+						<div class="form-row radio-row">
+							<input type="radio" id="male" name="gender" checked>
+							<label for="male">Male</label>
+							<input type="radio" id="female" name="gender">
+							<label for="female">Female</label>
+						</div>
+						<div class="form-cols">
+							<div class="form-row">
+								<label for="country">Country</label>
+								<select name="country" id="country">
+									<option value="ukraine">Ukraine</option>
+									<option value="poland">Poland</option>
+									<option value="germany">Germany</option>
+									<option value="finland">Finland</option>
+								</select>
+							</div>
+							<div class="form-row">
+								<label for="city">City</label>
+								<input type="text" id="city">
+							</div>
+						</div>
+						<div class="form-row">
+							<button type="submit">Sign Up</button>
+						</div>
+						<div class="form-row confirm-row">
+							<p>By clicking the 'Sign Up' button, you confirm that you accept our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.</p>
+						</div>
+					</div>
+				</form>
+			</div>
+			<span>Have an account?</span>
+			<a href="#">Log in</a>
+		</div>
+		<!-- Profile section -->
+		<div class="container">
+			<div class="form-container profile-container">
+				<h2>Profile</h2>
+				<form action="#" method="post">
+					<div class="ava-container">
+						<div class="ava-wrapper">
+							<img src="./Assets/Images/Ava.png" alt="ava">
+						</div>
+						<div class="ava-controls">
+							<div class="ava-btn-group">
+								<input type="file" id="uploadFile" accept="image/*">
+								<label for="uploadFile"><i class="fa-solid fa-camera"></i></label>
+								<button type="button"><i class="fa-solid fa-trash"></i></button>
+							</div>
+							<p class="upload-hint">
+								Up to 1 MB (300x300 px)
+							</p>
+						</div>
+					</div>
+					<div class="form-inner">
+						<div class="form-row">
+							<label for="userName">User Name</label>
+							<input type="text" id="userName">
+						</div>
+						<div class="form-row">
+							<label for="profileEmail">E-mail</label>
+							<input type="email" id="profileEmail">
+						</div>
+						<div class="form-row">
+							<label for="profileCountry">First Name</label>
+							<select name="profileCountry" id="profileCountry">
+								<option value="ukraine">Ukraine</option>
+								<option value="poland">Poland</option>
+								<option value="germany">Germany</option>
+								<option value="finland">Finland</option>
+							</select>
+						</div>
+						<div class="form-row">
+							<label for="city">City</label>
+							<input type="text" id="city">
+						</div>
+						<div class="form-row">
+							<label for="zipCode">Zip-code</label>
+							<input type="text" id="zipCode">
+						</div>
+						<div class="form-row">
+							<label for="number">Phone Number</label>
+							<input type="tel" id="number">
+						</div>
+						<button type="submit"></button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
