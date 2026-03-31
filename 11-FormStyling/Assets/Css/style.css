@@ -273,7 +273,11 @@ input[type=radio]:checked {
 		background-color: #fff;
 		border: 1px solid var(--primary_gray-light);
 	}
-	
+}
+
+.fake-file {
+	color: var(--primary_gray-dark);
+	font-size: 0.8125rem;
 }
 
 .upload-hint {
