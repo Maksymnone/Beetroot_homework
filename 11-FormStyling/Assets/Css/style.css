@@ -18,14 +18,17 @@ body {
 }
 
 .page-wrapper {
+	display: flex;
+	gap: 30px;
 	width: min(90%,1170px);
 	margin: 0 auto;
-	background-color: #fff;
+
 }
 
 .container {
 	max-width: 570px;
 	padding: 35px;
+	background-color: #FFF;
 }
 
 h1,h2 {
@@ -63,6 +66,18 @@ label {
 	color: var(--primary_gray-dark);
 }
 
+a:focus {
+	outline: none;
+	border: 1px solid var(--accent_blue);
+}
+
+button {
+	&:focus {
+		outline: none;
+		border: 2px solid #07407e;
+	}
+}
+
 .radio-row {
 	display: flex;
 	flex-direction: row;
@@ -76,6 +91,16 @@ input[type=text],input[type=email],input[type=tel] {
 	&:focus,&:active {
 		border: 1px solid var(--accent_blue);
 		outline: none;		
+	}
+	&:disabled {
+		cursor: not-allowed;
+		background-color: #E4E4E4;
+	}
+	&:user-valid {
+		border: 1px solid green;
+	}
+	&:user-invalid {
+		border: 1px solid red
 	}
 }
 
@@ -140,7 +165,7 @@ input[type=radio] {
 }
 
 input[type=radio]:focus::before {
-	border: 3px solid var(--accent_blue);
+	border: 2px solid var(--accent_blue);
 }
 
 input[type=radio]:checked {
@@ -175,6 +200,9 @@ input[type=radio]:checked {
 	background-color: var(--accent_blue);
 }
 
+.select2 .select2-container .select2-container--default {
+	width: 100%;
+}
 
 .qst-wrap {
 	text-align: center;
@@ -185,6 +213,10 @@ input[type=radio]:checked {
 		text-decoration: none;
 		color: var(--accent_blue);
 	}
+}
+
+.profile-container {
+	width: 570px;
 }
 
 .ava-container {
@@ -202,9 +234,6 @@ input[type=radio]:checked {
 	gap: 10px;
 }
 
-h2 {
-
-}
 
 .ava-btn-group {
 	position: relative;
@@ -252,4 +281,9 @@ h2 {
 	color: var(--primary_gray);
 	letter-spacing: -0.1px;
 }
+
+.update-btn {
+	width: 150px;
+}
+
 
