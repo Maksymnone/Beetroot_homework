@@ -29,6 +29,7 @@ body {
 	max-width: 570px;
 	padding: 35px;
 	background-color: #FFF;
+	flex-grow: 1;
 }
 
 h1,h2 {
@@ -204,6 +205,11 @@ input[type=radio]:checked {
 	width: 100%;
 }
 
+
+.select2-container--default .select2-selection--single:focus {
+	outline: none;
+	border-color: var(--accent_blue);
+}
 .qst-wrap {
 	text-align: center;
 	font-size: 0.9375rem;
@@ -215,9 +221,6 @@ input[type=radio]:checked {
 	}
 }
 
-.profile-container {
-	width: 570px;
-}
 
 .ava-container {
 	display: flex;
