@@ -1,102 +1,175 @@
-$accent-green: #3DB370;
-$text-black: #16133D;
-$title-gray: #7690A8;
-$white:#FFF;
+$accent-green: #3db370;
+$text-black: #16133d;
+$title-gray: #7690a8;
+$white: #fff;
 
-@mixin fzlh($px,$lh) {
-	font-size: ($px / 16) * 1rem;
-	line-height: ($lh / 16) * 1rem;
+@mixin fzlh($px, $lh) {
+    font-size: ($px / 16) * 1rem;
+    line-height: ($lh / 16) * 1rem;
 }
 
-*,*::before,*::after {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-	color: $text-black;
-	font-family: 'Roboto';
-	font-weight: 400;
+    color: $text-black;
+    font-family: "Roboto";
+    font-weight: 400;
 }
 
 a {
-	text-decoration: none;
-	color: inherit;
+    text-decoration: none;
+    color: inherit;
 }
 
 li {
-	list-style: none;
+    list-style: none;
 }
 
 .page-wrapper {
-	width: min(90%,1440px);
-	height: 100dvh;
-	margin: 0 auto;
-	display: grid;
-	grid-template-rows: 80px 1fr 193px;
+    width: min(90%, 1440px);
+    height: 100dvh;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: 80px 1fr 193px;
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
 }
 
 .logo-wrap {
-	width: 100%;
-	height: 100%;
-	display: flex;
-	align-items: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .logo-link {
-	display: flex;
-	align-items: center;
-	gap: 13px;
-	
+    display: flex;
+    align-items: center;
+    gap: 13px;
 }
 .logo-text {
-	@include fzlh(35,35);
-	font-family: 'Quicksand';
- 	font-weight: 500;
-	padding: 2px 0;
+    @include fzlh(35, 35);
+    font-family: "Quicksand";
+    font-weight: 500;
+    padding: 2px 0;
 }
-.container {
-	padding: 100px 0;
-	hgroup {
-		margin-bottom: 40px;
-		h1{
-			text-transform: uppercase;
-			font-weight: 400;
-			@include fzlh(16,21);
-			color: $title-gray;
-			margin-bottom: 15px;
-		}
-		p {
-			font-family: 'Nunito Sans';
-			font-weight: 600;
-			@include fzlh(40,52);
-			letter-spacing: -0.2px;
-		}
-	}
+.main-container {
+    padding: 100px 0;
+    hgroup {
+        margin-bottom: 40px;
+        h1 {
+            text-transform: uppercase;
+            font-weight: 400;
+            @include fzlh(16, 21);
+            color: $title-gray;
+            margin-bottom: 15px;
+        }
+        p {
+            font-family: "Nunito Sans";
+            font-weight: 600;
+            @include fzlh(40, 52);
+            letter-spacing: -0.2px;
+        }
+    }
 }
 
 .services-list {
-	display: flex;
-	justify-content: space-between;
-	gap: 30px;
-
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
 }
 .services-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 40px;
+    border: 1px solid #e5eaf4;
+    border-radius: 8px;
+    transition: all 0.8s ease;
+    &:hover {
+        border: 1px solid $accent-green;
+        svg.icon-green {
+            opacity: 1;
+        }
+    }
 }
 .icon-wraper {
+    position: relative;
+    width: 100%;
+    height: 64px;
+
+    svg {
+        width: 39px;
+        height: 36px;
+        position: absolute;
+        top: 3px;
+        left: 3px;
+    }
+    svg.icon-green {
+        opacity: 0;
+    }
 }
 .item-title {
+    font-weight: 400;
+    letter-spacing: 0.2px;
 }
 .item-text {
+    line-height: 1.75rem;
+    letter-spacing: 0.4px;
 }
-.item-btn-wrap {
-}
+
 .item-btn {
+    color: $accent-green;
+    font-weight: 600;
+}
+
+footer {
+    background-color: $text-black;
+}
+
+.footer-container {
+    padding: 40px 0;
+    .logo-wrap {
+        height: max-content;
+		margin-bottom: 40px;
+    }
+    .logo-text {
+        color: #fff;
+    }
 }
 .social-list {
+    display: flex;
+    max-width: 230px;
+    justify-content: space-between;
+    gap: 10px;
 }
 .social-item {
+	cursor: pointer;
+    &:hover svg {
+        color: #3db370;
+    }
 }
 .social-item-svg-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background-color: #fff;
+    border-radius: 6px;
+    svg {
+        width: 20px;
+        height: 20px;
+        color: #0d0d0d;
+    }
 }
