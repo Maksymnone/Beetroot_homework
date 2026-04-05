@@ -1,0 +1,182 @@
+$accent-yellow: #ffcc00;
+$title-color: #666;
+$title-color-light: #898f8f;
+$text-color: #333;
+$icon-color: #ccc;
+$main-text: Raleway;
+$title-text: Roboto;
+$btn-text: "Open Sans";
+
+@mixin fzlh($fz, $lh) {
+	font-size: ($fz / 16) + rem;
+	line-height: ($lh / 16) + rem;
+}
+
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.page-wrapper {
+	padding-top: 120px;
+}
+
+li {
+	list-style: none;
+}
+
+.container {
+	max-width: 1170px;
+	margin: 0 auto;
+}
+
+.header-container {
+	position: relative;
+	max-width: 450px;
+	margin: 0 auto;
+	border-bottom: 2px solid $accent-yellow;
+	padding-bottom: 42px;
+	hgroup {
+		text-align: center;
+		text-transform: uppercase;
+
+		p {
+			@include fzlh(18, 24);
+			color: $title-color-light;
+			font-family: $main-text;
+			margin-bottom: 15px;
+			font-weight: 500;
+		}
+		h1 {
+			@include fzlh(60, 66);
+			color: $accent-yellow;
+			font-family: $title-text;
+			font-weight: 900;
+		}
+		.header-border {
+			position: absolute;
+			bottom: -20px;
+			left: 47%;
+			width: 30px;
+			height: 30px;
+			background-color: #fff;
+		}
+	}
+}
+
+.main-container {
+	padding-top: 50px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	// IMG-container style
+	.img-container {
+		position: relative;
+		padding: 80px 0 70px 85px;
+		span {
+			display: block;
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			&.corner-top-right {
+				top: 65px;
+				right: 85px;
+				border-right: 1px solid $accent-yellow;
+				border-top: 1px solid $accent-yellow;
+			}
+			&.corner-top-left {
+				top: 64px;
+				left: 70px;
+				border-top: 1px solid $accent-yellow;
+				border-left: 1px solid $accent-yellow;
+			}
+			&.corner-bot-left {
+				bottom: 59px;
+				left: 70px;
+				border-bottom: 1px solid $accent-yellow;
+				border-left: 1px solid $accent-yellow;
+			}
+			&.corner-bot-right {
+				bottom: 58px;
+				right: 85px;
+				border-bottom: 1px solid $accent-yellow;
+				border-right: 1px solid $accent-yellow;
+			}
+		}
+	}
+	// CONTENT container style
+	.content-container {
+		padding: 70px 0 70px 17px;
+		border-left: 1px solid $accent-yellow;
+		text-align: center;
+		hgroup {
+			h2 {@include fzlh(36,42);
+				color: $title-color;
+				font-family: $title-text;
+				font-weight: 900;
+				margin-bottom: 21px;
+			}
+			span {
+				display: block;
+				width: 100px;
+				margin: 0 auto 30px;
+				border-top: 1px solid $accent-yellow;
+			}
+			h3 {
+				@include fzlh(24,36);
+				font-family: $main-text;
+				font-weight: 400;
+				color:$title-color;
+				margin-bottom: 22px;
+			}
+		}
+		.social-icon-list {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 5px;
+			margin-bottom: 49px;
+			.social-item {
+				position: relative;
+				width: 30px;
+				height: 30px;
+				border: 3px solid #CCC;
+				border-radius: 50%;
+				.svg-wrap {
+					width: 20px;
+					height: 12px;
+					position: absolute;
+					top: 28%;
+					left: 12%;
+				}
+			}
+		}
+		.content-text {
+			width: max(77%,430px);
+			margin: 0 auto 7px;
+			@include fzlh(14,24);
+			font-family: $main-text;
+			color: $text-color;
+			font-weight: 500;
+			text-align: center;
+		}
+		.content-decor {
+			margin-bottom: 18px;
+		}
+		button {
+			width: 118px;
+			padding: 5px 0;
+			border: 1px solid $accent-yellow;
+			font-family: $btn-text;
+			font-weight: 700;
+			@include fzlh(14,14);
+			color: $title-color;
+			text-transform: uppercase;
+			background-color: #FFF;
+		}
+	}
+}
+
+
