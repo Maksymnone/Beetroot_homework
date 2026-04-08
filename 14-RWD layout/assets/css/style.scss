@@ -1,3 +1,15 @@
+$gray500-color: #7B7B7B;
+$gray700-color: #565656;
+$black-color: #000;
+$font-title: "Red Hat Display";
+$font-text: "Lato";
+
+@mixin fzlh ($fz,$lh) {
+	font-size: ($fz / 16) * 1rem;
+	line-height: ($lh / 16) * 1rem;
+}
+
+
 *,*::after,*::before {
 	margin: 0;
 	padding: 0;
@@ -6,6 +18,7 @@
 
 .page-wrapper {
 	min-height: 100dvh;
+	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -34,9 +47,174 @@ img {
 	margin: 0 auto;
 }
 
+header .container {
+	height: 100px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	.logo-wrap {
+		height: 100%;
+		flex-basis: 48%;
+		a {
+			height: 100%;
+			display: flex;
+			align-items: center;
+		}
+		img {
+			height: 12px;
+			width: 142px;
+		}
+		
+	}
+	.nav-wrap {
+		flex: 1;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 80px;
+		padding-left: 8px;
+		nav {
+			flex: 1;
+		}
+		& ul {
+
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			gap: clamp(15px, 1vw, 42px)
+			
+		}
+		a {
+			position: relative;
+			text-align: center;
+			@include fzlh(14,17);
+			color: $black-color;
+			font-family: $font-text;
+			font-weight: 400;
+			text-transform: uppercase;
+			letter-spacing: 3.5px;
+			padding-bottom: 2px;
+		}
+		a::after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			width: 70%;
+			transform: translateX(-50%) scaleX(0);
+			height: 2px;
+			background-color: $black-color;
+			transition: all .3s ease;
+		}
+		a:hover::after {
+			transform:translateX(-50%) scaleX(1);
+		}
+		button {
+			width: 20px;
+			height: 20px;
+			border: none;
+			background-color: #FFF;
+			cursor: pointer;
+			svg {
+				width: 17px;
+				height: 17px;
+			}
+		}
+		
+	}
+}
+
+
 .hero {
 	background: url("./../images/bg-image.jpg") center center/cover no-repeat;
 	aspect-ratio: 2.4;
+	padding-top: 100px;
+	h1 {
+		@include fzlh (48,64);
+		max-width: 770px;
+		font-family: $font-title;
+		font-weight: 600;
+		letter-spacing: 2.4px;
+
+	}
+}
+
+.blog-container {
+	padding-top: 90px;
+	h2 {
+		@include fzlh(48,64);
+		font-family: $font-title;
+		font-weight: 400;
+		letter-spacing: 2.4px;
+		margin-bottom: 50px;
+	}
+	
+
+	.article-item {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		&:nth-child(odd) {
+			flex-direction: row-reverse;
+		}
+		.article-img {
+			flex: 1 47.5%;
+		}
+		.article-content {
+			flex:1 50%;
+			padding: 67px 0 85px 30px;
+			.tags {
+				@include fzlh(16,24);
+				font-family:$font-text;
+				font-weight: 400;
+				color: $gray500-color;
+				margin-bottom: 25px;
+				letter-spacing: 1.6px;
+			}
+			.article-title {
+				@include fzlh(23,37.6);
+				font-family: $font-title;
+				font-weight: 500;
+				color: $black-color;
+				margin-bottom: 11px;
+				max-width: 369px;
+				letter-spacing: 2.4px;
+			}
+			
+			.date-wrap {
+				margin-bottom: 50px;
+			}
+			time {
+				@include fzlh(16,24);
+				font-family: $font-text;
+				font-weight: 400;
+				color: $gray500-color;
+				letter-spacing: 1.8px;
+			}
+			.article-text {
+				@include fzlh(16,24);
+				font-family: $font-text;
+				font-weight: 400;
+				color: $gray700-color;
+				max-width: 448px;
+				svg	{
+					margin-left: 17px;
+					width: 30px;
+					height: 12px;
+				}
+			}
+
+		}
+		
+	}
+	.article-item:first-child {
+		margin-bottom: 50px;
+	}
+
+	.article-item:last-child .article-content {
+			padding: 0 0 15px 120px;
+		}
+	
 }
 
 
