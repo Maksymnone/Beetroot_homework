@@ -380,7 +380,7 @@ header .container {
 
 footer {
 	.container {
-		padding-top: 90px;
+		padding-top: 70px;
 	}
 	background-color: #F4F4F4;
 	.footer-wrapper {
@@ -417,6 +417,7 @@ footer {
 .footer-social-wrap {
 	display: flex;
 	align-items: center;
+	justify-content: flex-end;
 }
 .social-list {
 	display: flex;
