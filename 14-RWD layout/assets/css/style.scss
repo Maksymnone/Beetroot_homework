@@ -139,6 +139,7 @@ header .container {
 	}
 }
 
+
 .blog-container {
 	padding-top: 90px;
 	h2 {
@@ -198,11 +199,7 @@ header .container {
 				color: $gray700-color;
 				max-width: 448px;
 				letter-spacing: 0.88px;
-				svg	{
-					margin-left: 17px;
-					width: 30px;
-					height: 12px;
-				}
+				
 			}
 
 		}
@@ -217,6 +214,89 @@ header .container {
 	}
 	
 }
+
+.arrow-svg	{
+	margin-left: 17px;
+	width: 30px;
+	height: 12px;
+}
+
+
+.posts-container {
+	padding-top: 90px;
+}
+
+.title-wrap {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 40px;
+	h2 {
+		@include fzlh(28,46.48);
+		font-family: $font-title;
+		font-weight: 600;
+		color: $black-color;
+		letter-spacing: 2.8px;
+	}
+	span {
+		@include fzlh (16,26.56);
+		font-family: $font-text;
+		font-weight: 400;
+		letter-spacing: 1.6px;
+		color: $gray500-color;
+	}
+}
+
+.posts-list {
+	display: flex;
+	justify-content: space-between;
+	gap: 30px;
+	.posts-card {
+		flex: 1;
+		.posts-card-img {
+			margin-bottom: 25px;
+		}
+	}
+}
+.tags-wrap {
+	display: flex;
+	justify-content: space-between;
+	color: $gray500-color;
+	@include fzlh(12,19.92);
+	font-family: $font-text;
+	font-weight: 400;
+	margin-bottom: 25px;
+	letter-spacing: 1.2px;
+}
+
+.posts-card-content {
+	h3 {
+		@include fzlh(22,36.52);
+		font-family: $font-title;
+		font-weight: 600;
+		letter-spacing: 2.2px;
+		color: $black-color;
+		margin-bottom: 18px;
+	}
+	p {
+		@include fzlh(16,26.56);
+		font-family: $font-text;
+		font-weight: 400;
+		color: $gray700-color;
+		max-width: 448px;
+		letter-spacing: 0.88px;
+	}
+}
+
+.popular-list {
+	display: flex;
+	justify-content: space-between;
+	gap: 30px;
+	.popular-item {
+		flex: 1 50%;
+	}
+}
+
 
 
 @media screen and (max-width: 1100px) {
