@@ -1,27 +1,30 @@
-$gray500-color: #7B7B7B;
+$gray500-color: #7b7b7b;
 $gray700-color: #565656;
 $black-color: #000;
 $font-title: "Red Hat Display";
 $font-text: "Lato";
 
-@mixin fzlh ($fz,$lh) {
+@mixin fzlh($fz, $lh) {
 	font-size: ($fz / 16) * 1rem;
 	line-height: ($lh / 16) * 1rem;
 }
 
-
-*,*::after,*::before {
+*,
+*::after,
+*::before {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
 
 .page-wrapper {
+	position: relative;
 	min-height: 100dvh;
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	padding-top: 100px;
 	main {
 		flex-grow: 1;
 	}
@@ -53,123 +56,127 @@ section .container {
 }
 
 .section-text {
-	@include fzlh(16,26.56);
+	@include fzlh(16, 26.56);
 	font-family: $font-text;
 	font-weight: 400;
 	color: $gray700-color;
 	letter-spacing: 0.88px;
-	
 }
 
 .tags-style {
-	@include fzlh(16,26.56);
+	@include fzlh(16, 26.56);
 	font-family: $font-text;
 	font-weight: 400;
 	color: $gray500-color;
 	letter-spacing: 1.8px;
 }
 
-header .container {
-	height: 100px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	.logo-wrap {
-		height: 100%;
-		flex-basis: 48%;
-		a {
-			height: 100%;
-			display: flex;
-			align-items: center;
-		}
-		img {
-			height: 12px;
-			width: 142px;
-		}
-		
-	}
-	.nav-wrap {
-		flex: 1;
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1500;
+	background-color: #fff;
+	.container {
+		height: 100px;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		gap: 80px;
-		padding-left: 8px;
-		nav {
-			flex: 1;
+		.logo-wrap {
+			height: 100%;
+			flex-basis: 48%;
+			a {
+				height: 100%;
+				display: flex;
+				align-items: center;
+			}
+			img {
+				height: 12px;
+				width: 142px;
+			}
 		}
-		& ul {
-
+		.nav-wrap {
+			flex: 1;
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
-			gap: clamp(15px, 1vw, 42px)
-			
-		}
-		a {
-			position: relative;
-			text-align: center;
-			@include fzlh(14,17);
-			color: $black-color;
-			font-family: $font-text;
-			font-weight: 400;
-			text-transform: uppercase;
-			letter-spacing: 3.5px;
-			padding-bottom: 2px;
-		}
-		a::after {
-			content: "";
-			position: absolute;
-			bottom: 0;
-			left: 50%;
-			width: 70%;
-			transform: translateX(-50%) scaleX(0);
-			height: 2px;
-			background-color: $black-color;
-			transition: all .3s ease;
-		}
-		a:hover::after {
-			transform:translateX(-50%) scaleX(1);
-		}
-		button {
-			width: 20px;
-			height: 20px;
-			border: none;
-			background-color: #FFF;
-			cursor: pointer;
-			svg {
-				width: 17px;
-				height: 17px;
+			gap: 80px;
+			padding-left: 8px;
+			nav {
+				flex: 1;
+			}
+			& ul {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				gap: clamp(15px, 1vw, 42px);
+			}
+			a {
+				position: relative;
+				text-align: center;
+				@include fzlh(14, 17);
+				color: $black-color;
+				font-family: $font-text;
+				font-weight: 400;
+				text-transform: uppercase;
+				letter-spacing: 3.5px;
+				padding-bottom: 2px;
+			}
+			a::after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				width: 70%;
+				transform: translateX(-50%) scaleX(0);
+				height: 2px;
+				background-color: $black-color;
+				transition: all 0.3s ease;
+			}
+			a:hover::after {
+				transform: translateX(-50%) scaleX(1);
+			}
+			.header-search button {
+				width: 40px;
+				height: 40px;
+				border: none;
+				background-color: #fff;
+				cursor: pointer;
+				svg {
+					width: 17px;
+					height: 17px;
+				}
+				&:hover {
+					border: 2px solid $gray700-color;
+					border-radius: 3px;
+				}
 			}
 		}
 	}
 }
-
 
 .hero {
 	background: url("./../images/bg-image.jpg") center center/cover no-repeat;
 	aspect-ratio: 2.4;
 	padding-top: 100px;
 	h1 {
-		@include fzlh (48,64);
+		@include fzlh(48, 64);
 		max-width: 770px;
 		font-family: $font-title;
 		font-weight: 600;
 		letter-spacing: 2.4px;
-
 	}
 }
 
-
 .blog-container {
 	h2 {
-		@include fzlh(48,64);
+		@include fzlh(48, 64);
 		font-family: $font-title;
 		font-weight: 400;
 		letter-spacing: 2.4px;
 		margin-bottom: 50px;
 	}
-	
 
 	.article-item {
 		display: flex;
@@ -182,14 +189,14 @@ header .container {
 			flex: 1 47.5%;
 		}
 		.article-content {
-			flex:1 50%;
+			flex: 1 50%;
 			padding: 79px 0 85px 30px;
 			.tags {
 				@extend .tags-style;
 				margin-bottom: 25px;
 			}
 			.article-title {
-				@include fzlh(23,38.18);
+				@include fzlh(23, 38.18);
 				font-family: $font-title;
 				font-weight: 500;
 				color: $black-color;
@@ -197,7 +204,7 @@ header .container {
 				max-width: 369px;
 				letter-spacing: 2.4px;
 			}
-			
+
 			.date-wrap {
 				margin-bottom: 50px;
 			}
@@ -208,9 +215,7 @@ header .container {
 				@extend .section-text;
 				max-width: 448px;
 			}
-
 		}
-		
 	}
 	.article-item:first-child {
 		margin-bottom: 50px;
@@ -219,15 +224,13 @@ header .container {
 	.article-item:last-child .article-content {
 		padding: 0 0 15px 120px;
 	}
-	
 }
 
-.arrow-svg	{
+.arrow-svg {
 	margin-left: 17px;
 	width: 30px;
 	height: 12px;
 }
-
 
 .title-wrap {
 	display: flex;
@@ -235,25 +238,23 @@ header .container {
 	align-items: center;
 	margin-bottom: 42px;
 	h2 {
-		@include fzlh(28,46.48);
+		@include fzlh(28, 46.48);
 		font-family: $font-title;
 		font-weight: 600;
 		color: $black-color;
 		letter-spacing: 2.8px;
 	}
 	span {
-		@include fzlh (16,26.56);
+		@include fzlh(16, 26.56);
 		font-family: $font-text;
 		font-weight: 400;
 		letter-spacing: 1.6px;
 		color: $gray500-color;
-		&+.arrow-svg {
+		& + .arrow-svg {
 			margin-left: 8px;
 		}
 	}
-	
 }
-
 
 .posts-list {
 	display: flex;
@@ -270,7 +271,7 @@ header .container {
 	display: flex;
 	justify-content: space-between;
 	color: $gray500-color;
-	@include fzlh(12,19.92);
+	@include fzlh(12, 19.92);
 	font-family: $font-text;
 	font-weight: 400;
 	margin-bottom: 25px;
@@ -279,7 +280,7 @@ header .container {
 
 .posts-card-content {
 	h3 {
-		@include fzlh(22,36.52);
+		@include fzlh(22, 36.52);
 		font-family: $font-title;
 		font-weight: 600;
 		letter-spacing: 2.2px;
@@ -314,7 +315,7 @@ header .container {
 
 .popular-item-content {
 	h3 {
-		@include fzlh(24,39.84);
+		@include fzlh(24, 39.84);
 		font-family: $font-title;
 		font-weight: 500;
 		color: $black-color;
@@ -332,12 +333,17 @@ header .container {
 		width: 180px;
 		height: 46px;
 		background-color: $gray700-color;
-		color: #FFF;
+		color: #fff;
 		border: none;
-		@include fzlh(16,26.56);
+		@include fzlh(16, 26.56);
 		font-family: $font-text;
 		font-weight: 700;
 		letter-spacing: 1.6px;
+		&:hover {
+			background-color: #fff;
+			color: $gray700-color;
+			border: 2px solid $gray700-color;
+		}
 	}
 }
 
@@ -346,19 +352,19 @@ header .container {
 	justify-content: space-between;
 	gap: 230px;
 	padding-bottom: 90px;
-	>div {
+	> div {
 		flex: 1 50%;
 	}
 }
 
 .info-title-wrap h2 {
-	@include fzlh(23,38.18);
+	@include fzlh(23, 38.18);
 	font-family: $font-title;
 	font-weight: 400;
 	color: $black-color;
 	letter-spacing: 2.3px;
 	margin-bottom: 15px;
-	&+svg.arrow-svg {
+	& + svg.arrow-svg {
 		margin-left: 0;
 	}
 	.line-wrap {
@@ -368,7 +374,7 @@ header .container {
 
 .info-text-wrap {
 	p {
-		@include fzlh(19,32);
+		@include fzlh(19, 32);
 		font-family: $font-text;
 		color: $gray700-color;
 		letter-spacing: 0.95px;
@@ -378,23 +384,34 @@ header .container {
 	}
 }
 
+// Footer-style
 
 footer {
 	.container {
 		padding-top: 70px;
 	}
-	background-color: #F4F4F4;
+	.copy {
+		text-align: center;
+		@include fzlh(12,19.92);
+		font-family: $font-text;
+		font-weight: 400;
+		letter-spacing: 1.2px;
+		color: $black-color;
+		padding-right: 5px;
+	}
+	background-color: #f4f4f4;
 	.footer-wrapper {
 		display: flex;
 		justify-content: space-between;
 		gap: 400px;
-		>div {
+		margin-bottom: 25px;
+		> div {
 			flex: 1 50%;
 		}
 	}
 	.footer-content-wrap {
 		h2 {
-			@include fzlh(48,64);
+			@include fzlh(48, 64);
 			font-family: $font-title;
 			font-weight: 400;
 			letter-spacing: 2.4px;
@@ -403,14 +420,14 @@ footer {
 		}
 		a {
 			display: block;
-			@include fzlh(16,26.56);
+			@include fzlh(16, 26.56);
 			font-family: $font-text;
 			font-weight: 400;
 			letter-spacing: 1.6px;
 			color: $black-color;
 		}
 		a:first-of-type {
-			margin-bottom: 15px;
+			margin-bottom: 10px;
 		}
 	}
 }
@@ -435,7 +452,7 @@ footer {
 		&:hover {
 			background-color: $gray700-color;
 			.social-svg {
-				color: #FFF;
+				color: #fff;
 			}
 		}
 		.social-svg {
@@ -445,12 +462,14 @@ footer {
 		}
 	}
 	.social-item:nth-of-type(2) .social-svg {
-			width: 13px;
-		}
+		width: 13px;
+	}
 	.social-item:nth-of-type(3) .social-svg {
-			width: 29px;
-		}
+		width: 29px;
+	}
 }
+
+// Hamburger menu style
 
 .overlay {
 	position: fixed;
@@ -458,35 +477,36 @@ footer {
 	left: 0;
 	width: 100vw;
 	height: 100dvh;
-	background-color: rgba(0,0,0,0.7);
+	background-color: rgba(0, 0, 0, 0.7);
 	z-index: 99;
+	opacity: 0;
+	visibility: hidden;
 }
 
 .mobile-panel {
 	position: fixed;
 	width: 100%;
 	min-height: 300px;
-	background-color: #FFF;
+	background-color: #fff;
 	top: 60px;
 	left: 0;
 	transform: translateY(-120%);
 	z-index: 100;
-	transition: all .4s ease;
-	&.open {
-		transform: translateY(0);
-	}
+	transition: all 0.4s ease;
+
 	nav {
 		padding: 40px;
 		ul {
 			display: flex;
 			flex-direction: column;
-			li{
+			li {
 				width: 100%;
 				height: 50px;
-				border-top: 1px solid $black-color;
-				// &:not(:last-child) {
-				// 	border-top: 1px solid $black-color;
-				// }
+				border-bottom: 1px solid $black-color;
+				&:hover a {
+					font-size: 1.2rem;
+					transform: rotateX(360deg);
+				}
 			}
 			a {
 				display: inline-block;
@@ -496,36 +516,49 @@ footer {
 				align-items: center;
 				justify-content: end;
 				position: relative;
-				@include fzlh(14,17);
+				@include fzlh(14, 17);
 				color: $black-color;
 				font-family: $font-text;
 				font-weight: 400;
 				text-transform: uppercase;
 				letter-spacing: 3.5px;
+				transition: all 0.5s ease;
+				&:hover {
+					font-size: 1.3rem;
+					transform: rotateX(360deg);
+				}
 			}
-			// a::after {
-			// content: "";
-			// 	position: absolute;
-			// 	bottom: 50%;
-			// 	left: 50%;
-			// 	width: 70%;
-			// 	transform: translateX(-50%) scaleX(0);
-			// 	height: 2px;
-			// 	background-color: $black-color;
-			// 	transition: all .3s ease;
-			// }
-			// a:hover::after {
-			// 	transform:translateX(-50%) scaleX(1);
-			// }
 		}
 	}
 }
 
+.hamburger {
+	padding: 0;
+	display: none;
+}
+header .container .nav-wrap button {
+	width: 33px;
+	height: 40px;
+}
+
+body.show-mobile {
+	overflow: hidden;
+	height: 100dvh;
+	.mobile-panel {
+		transform: translateY(0);
+	}
+	.overlay {
+		opacity: 1;
+		visibility: visible;
+	}
+}
 
 // MEDIA request=============================================
 
-
 @media screen and (max-width: 1100px) {
+	.page-wrapper {
+		padding-top: 60px;
+	}
 	header .container {
 		height: 60px;
 		.logo-wrap {
@@ -534,32 +567,224 @@ footer {
 				height: auto;
 			}
 		}
+		.nav-wrap {
+			justify-content: end;
+			gap: 34px;
+			nav {
+				display: none;
+			}
+			.header-search.header-search svg {
+				width: 30px;
+				height: 20px;
+			}
+		}
+		.hamburger {
+			display: block;
+		}
 	}
 	.hero {
 		background: url("./../images/bg-image.jpg") center center/cover no-repeat;
 		aspect-ratio: 2.4;
 		padding-top: 30px;
 		h1 {
-			@include fzlh (36,50);
+			@include fzlh(36, 50);
 			max-width: 650px;
 			font-family: $font-title;
 			font-weight: 600;
-			letter-spacing: 2.5px;
-
+			letter-spacing: 1.8px;
 		}
 	}
 	section .container {
-	padding-top: 70px;
-}
+		padding-top: 70px;
+	}
+
+	.blog-container {
+		h2 {
+			margin-bottom: 0;
+		}
+		.article-item {
+			align-items: flex-start;
+			&:first-child {
+				margin-bottom: 0;
+			}
+			&:last-child .article-content {
+				padding: 50px 0 15px 0;
+			}
+			.article-img {
+				padding-top: 50px;
+			}
+			.article-content {
+				padding: 51px 0 0 18px;
+				.date-wrap {
+					margin-bottom: 36px;
+				}
+				.tags {
+					margin-bottom: 22px;
+				}
+			}
+		}
+	}
+
+	.posts-container.posts-container {
+		padding-top: 28px;
+		.posts-list {
+			flex-direction: column;
+			gap: 9px;
+			.posts-card-link {
+				display: flex;
+				gap: 20px;
+				.posts-card-img {
+					flex: 1 50%;
+				}
+				.posts-card-content {
+					flex: 1 50%;
+				}
+			}
+		}
+	}
+	.posts-card:nth-child(2) .posts-card-link {
+		flex-direction: row-reverse;
+	}
+
+	.popular-container.popular-container {
+		padding-top: 40px;
+		.title-wrap {
+			margin-bottom: 45px;
+		}
+		.popular-list {
+			gap: 20px;
+			margin-bottom: 65px;
+			.popular-item-img {
+				margin-bottom: 26px;
+			}
+			.popular-item-content {
+				h3 {
+					letter-spacing: 1.4px;
+					line-height: 1.5;
+					margin-bottom: 23px;
+				}
+			}
+		}
+	}
+
+	.info-container {
+		gap: 35px;
+		flex-direction: column;
+		padding-bottom: 70px;
+		.info-text-wrap {
+			text-align: end;
+			p {
+				letter-spacing: 1px;
+			}
+			p:first-of-type {
+				margin-bottom: 21px;
+			}
+		}
+	}
+
+	footer {
+		.container {
+			padding: 50px;
+			text-align: center;
+		}
+		background-color: #f4f4f4;
+		.footer-wrapper {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			gap: 49px;
+			h2 {
+				margin-bottom: 20px;
+			}
+			.footer-content-wrap a:first-of-type {
+				margin-bottom: 15px;
+			}
+		}
+	}
 }
 
 @media screen and (max-width: 544px) {
-		.hero {
-			background: url("./../images/bg-image-mobile.jpg") center center/cover no-repeat;
-			aspect-ratio: 0.64;
-		}
-}
+	.container {
+		padding: 0 10px;
+	}
 
+	header .container .nav-wrap {gap: 11px;}
+
+	.hero {
+		background: url("./../images/bg-image-mobile.jpg") center center/cover
+			no-repeat;
+		aspect-ratio: 0.64;
+		padding-top: 70px;
+		h1 {
+			@include fzlh(30,50);
+			letter-spacing: 1.5px;
+		}
+	}
+
+	.blog-section {
+		h2 {
+			text-align: center;
+		}
+		.article-item.article-item.article-item {
+			flex-direction: column;
+			.article-content {
+				padding-left: 0;
+				.tags {
+					letter-spacing: 1.7px;
+					margin-bottom: 28px;
+				}
+				h3 {
+					letter-spacing: 1.9px;
+				}
+				.date-wrap {
+					margin-bottom: 38px;
+				}
+			}
+			.article-img {
+				padding-top: 39px;
+			}
+			
+		}
+		.article-item:last-child .article-img.article-img.article-img{
+			padding-top: 25px;
+		}
+	}
+
+	.posts-section {
+		.posts-container {
+			padding-top: 65px;
+		}
+		.title-wrap {
+			flex-direction: column;
+			align-items: start;
+			margin-bottom: 29px;
+			.section-title {
+				letter-spacing: 1.4px;
+				margin-bottom: 5px;
+			}
+		}
+		.posts-card-link {
+			flex-direction: column;
+			.tags-wrap {
+				@include fzlh(16,25.56);
+				letter-spacing: 1.6px;
+			}
+		}
+	}
+	.posts-container.posts-container .posts-list .posts-card-link {
+		gap: 5px;
+	}
+	.blog-container .article-item .article-content .tags, .posts-list .posts-card .posts-card-img, .tags-wrap {
+		margin-bottom: 23px;
+	}
+	.posts-card:nth-child(2) .posts-card-link {
+		flex-direction: column;
+	}
+	.posts-container.posts-container .posts-list {
+		gap: 50px;
+	}
+}
 
 .overlay {
 	position: fixed;
@@ -567,10 +792,9 @@ footer {
 	left: 0;
 	width: 100vw;
 	height: 100dvh;
-	background-color: rgba(0,0,0,0.7);
+	background-color: rgba(0, 0, 0, 0.7);
 	z-index: 99;
 }
 
 .mobile-panel {
-
 }
