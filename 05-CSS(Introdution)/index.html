@@ -4,13 +4,35 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Denis Novik CV</title>
-	<link rel="stylesheet" href="./Assets/styles/styles.css">
+	
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
 		rel="stylesheet">
+	<link rel="stylesheet" href="./Assets/styles/hamb.min.css">
+	<link rel="stylesheet" href="./Assets/styles/styles.css">
 </head>
 <body>
+	<div class="overlay close"></div>
+	<div class="mob-menu">
+		<ul class="nav-list" id="home">
+			<li class="nav-list__element inline">
+				<a href="#home" class="nav-list__link">Home</a>
+			</li>
+			<li class="nav-list__element inline">
+				<a href="#about" class="nav-list__link">About me</a>
+			</li>
+			<li class="nav-list__element inline">
+				<a href="#skills" class="nav-list__link">Skills</a>
+			</li>
+			<li class="nav-list__element inline">
+				<a href="#portfolio" class="nav-list__link">Portfolio</a>
+			</li>
+			<li class="nav-list__element inline">
+				<a href="#contacts" class="nav-list__link">Contacts</a>
+			</li>
+		</ul>
+	</div>
 	<header>
 		<div class="header-container ">
 			<nav>
@@ -32,6 +54,11 @@
 					</li>
 				</ul>
 			</nav>
+			<button class="hamburger hamburger--arrowturn" type="button">
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
+			</button>
 		</div>
 	</header>
 	<main>
@@ -161,5 +188,6 @@
 			<p>Like me on LinkedIn, Instagram, Behance, Dribble</p>
 		</div>
 	</footer>
+	<script src="./Assets/js/script.js"></script>
 </body>
 </html>
