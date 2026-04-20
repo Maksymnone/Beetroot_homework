@@ -41,8 +41,8 @@ button {
 
 body {
 	font-family: sans-serif;
-	@include fz(16);
-	color: $text-color;
+	@include fzlh(16,28);
+	color: #000;
 }
 
 .page-wrapper {
