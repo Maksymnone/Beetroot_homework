@@ -1,15 +1,21 @@
+/* constants */
+
 $page-color: #161926;
-$btn-color-light: #53F3CD;
-$btn-color-medium: #02E0AB;
-$text-accent-color: #689FF2;
-$line-section-color: #85BBB1;
+$btn-color-light: #53f3cd;
+$btn-color-medium: #02e0ab;
+$text-color: #ffffff;
+$text-accent-color: #689ff2;
+$line-section-color: #85bbb1;
 
+$font-text: "Lato";
+$font-title: "Playfair Display";
 
-@mixin fzlh($px,$lh) {
+@mixin fzlh($px, $lh) {
 	font-size: ($px/16) * 1rem;
-  line-height: ($lh/16) * 1rem;
+	line-height: ($lh/16) * 1rem;
 }
 
+// ===============Сommon styles====================
 *,
 *::before,
 *::after {
@@ -34,18 +40,24 @@ a {
 	text-decoration: none;
 }
 
-a,
-button {
-	transition: all 0.2s ease;
+body {
+	font-family: $font-text;
+	@include fzlh(16, 28);
+	color: #000;
+	background-color: $page-color;
+	background-image: url(./../images/First-Screen-Bg-Image.webp);
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: 100%;
 }
 
-body {
-	font-family: sans-serif;
-	@include fzlh(16,28);
-	color: #000;
+.accent-word {
+	color: $text-accent-color;
+	font-style: italic;
 }
 
 .page-wrapper {
+	padding-top: 30px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -55,18 +67,42 @@ body {
 }
 
 .container {
-	width: min(90%, 1600px);
+	width: min(90%, 1170px);
 	margin: 0 auto;
 }
+
+.btn-small {
+	position: relative;
+	display: inline-block;
+	color: $btn-color-light;
+	text-transform: uppercase;
+	font-family: $font-text;
+	font-weight: 700;
+	@include fzlh(20, 20);
+	letter-spacing: 1.6px;
+	z-index: 2;
+	&::after {
+		content: "";
+		display: inline-block;
+		position: absolute;
+		width: 100%;
+		height: 13px;
+		bottom: -6px;
+		right: -7px;
+		background-color: color-mix(in srgb, $btn-color-light, transparent 70%);
+		z-index: -1;
+	}
+}
+
+// =====================HEADER STYLE====================
 
 header {
 	width: 100%;
 	position: sticky;
 	left: 0;
 	top: 0;
-
 	height: 80px;
-	background-color: transparent;
+	background-color: rgba($color: $text-color, $alpha: 0.1);
 	backdrop-filter: blur(10px);
 	.container {
 		height: 100%;
@@ -79,6 +115,38 @@ header {
 			display: flex;
 			justify-content: end;
 			gap: 20px;
+			li {
+				a {
+					position: relative;
+					width: 100%;
+					color: $text-color;
+					letter-spacing: 1.12px;
+					@include fzlh(14, 24);
+					font-family: $font-text;
+					font-weight: 400;
+
+					&::after {
+						content: "";
+						display: inline-block;
+						width: 100%;
+						height: 3px;
+						bottom: -10px;
+						left: 0;
+						position: absolute;
+						// background: linear-gradient(to right,#53F3CD,transparent);
+						background-color: color-mix(
+							in srgb,
+							$btn-color-light,
+							transparent 30%
+						);
+						transform: translateX(-50%) scaleX(0);
+						transition: all 0.4s ease;
+					}
+				}
+				&:hover > a::after {
+					transform: translateX(0%) scaleX(1);
+				}
+			}
 		}
 	}
 }
@@ -87,4 +155,239 @@ header {
 	width: 110px;
 	height: 32px;
 	cursor: pointer;
+}
+
+// =================================FIRST SECTION STYLE=========================
+
+.first-section {
+	h1 {
+		font-family: $font-title;
+		font-weight: 400;
+		@include fzlh(44, 52);
+		color: $text-color;
+		max-width: 523px;
+		margin-top: 150px;
+		margin-bottom: 20px;
+	}
+	.first-section-text {
+		@include fzlh(18, 26);
+		font-weight: 300;
+		color: rgba($color: $text-color, $alpha: 0.8);
+		max-width: 439px;
+		margin-bottom: 50px;
+	}
+	.btn-small {
+		margin-bottom: 150px;
+	}
+}
+
+//==============================INFO SECTION STYLE============================
+
+.info-section {
+	.container {
+		display: flex;
+		justify-content: space-between;
+		// align-items: center;
+		.img-wrap {
+			flex: 1;
+		}
+		.info-content {
+			flex: 1;
+			position: relative;
+			display: flex;
+			align-items: center;
+			padding: 45px 0;
+		}
+	}
+}
+
+.info-content-inner {
+	position: absolute;
+	display: flex;
+	justify-content: space-between;
+	height: 90%;
+	width: 120%;
+	left: -25%;
+	padding: 45px 0;
+	background-color: rgba(22, 25, 38, 0.9);
+	.info-stats,
+	.info-desc {
+		flex: 1 50%;
+	}
+	.info-stats {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		color: $text-color;
+		.stats-item {
+			text-align: center;
+			p:first-child {
+				@include fzlh(68, 72);
+				font-family: $font-title;
+				margin-bottom: 12px;
+			}
+			p:nth-of-type(2) {
+				@include fzlh(18, 26);
+				font-weight: 300;
+				color: rgba($color: $text-color, $alpha: 0.6);
+				margin-bottom: 40px;
+			}
+			.stats-item-line {
+				display: inline-block;
+				width: 100px;
+				border-bottom: 1px solid $line-section-color;
+				margin-bottom: 40px;
+			}
+		}
+		.dollar-symbol {
+			@include fzlh(40, 50);
+			font-family: $font-title;
+			font-weight: 400;
+		}
+	}
+	.info-desc {
+		p {
+			@include fzlh(18, 26);
+			font-weight: 300;
+			color: rgba($color: $text-color, $alpha: 0.6);
+		}
+		p:first-child {
+			margin-bottom: 40px;
+		}
+		p:nth-child(2) {
+			margin-bottom: 50px;
+		}
+	}
+}
+
+// ===========================BENEFITS SECTION STYLE==========================
+
+.benefits-section .container {
+	padding-top: 120px;
+}
+.benefits-list {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 30px;
+	.benefits-card {
+		padding: 50px 30px 20px;
+		color: $text-color;
+		border-top: 1px solid #515773;
+		margin-bottom: 60px;
+	}
+	.card-title {
+		@include fzlh(40, 48);
+		font-family: $font-title;
+		font-weight: 400;
+		margin-bottom: 30px;
+		width: 80%;
+	}
+	.card-text {
+		@include fzlh(18, 26);
+		width: 95%;
+		font-weight: 300;
+		color: rgba($color: $text-color, $alpha: 0.6);
+		margin-bottom: 32px;
+	}
+}
+
+// =============================QUOTE SECTION STYLE===============================
+
+.quote-section .container {
+	padding: 100px 0 0 160px;
+	height: 400px;
+	background: url(../images/quote-background.webp) top left no-repeat;
+	blockquote {
+		position: relative;
+		@include fzlh(32, 46);
+		font-family: $font-text;
+		font-weight: 400;
+		letter-spacing: 1.28px;
+		color: #fff;
+		max-width: 710px;
+		margin-bottom: 40px;
+		&::before {
+			content: "";
+			display: inline-block;
+			position: absolute;
+			top: -30px;
+			left: -60px;
+			width: 100px;
+			height: 100px;
+			background: url(../images/quote-icon.svg) top left no-repeat;	
+		}
+	}
+	.author-quote {
+		color: $text-color;
+		@include fzlh(20,20);
+		letter-spacing: 1.6px;
+		font-style: italic;
+		font-family: $font-title;
+		font-weight: normal;
+	}
+}
+
+
+// ==============================TABLET SECTION STYLE===============================
+
+.video-section .container {
+	max-width: 970px;
+	margin: 120px auto;
+	.video-tablet {
+		border: 1px solid #515773;
+		border-radius: 32px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 50px;
+	}
+	.tablet-cam {
+		width: 13px;
+		height: 13px;
+		border-radius: 50%;
+		border: 1px solid #515773;
+		margin-left: 8px;
+		margin-right: 9px;
+	}
+	.tablet-screen {
+		flex-grow: 1;
+		max-width: 870px;
+		aspect-ratio: 870 / 549;
+		margin:31px 0;
+		position: relative;
+		overflow: hidden;
+		border-radius: 8px;
+		& iframe {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+		}
+	}
+	.tablet-btn {
+		width: 35px;
+		height: 35px;
+		border: 1px solid #515773;
+		border-radius: 50%;
+		margin-right: 14px;
+		margin-left: 21px;
+	}
+}
+
+.tablet-content {
+	h2 {
+		@include fzlh(40,48);
+		font-family: $font-title;
+		font-weight: 400;
+		color: $text-color;
+		margin-bottom: 20px;
+	}
+	p {
+		@include fzlh(18, 26);
+		width: 90%;
+		font-weight: 300;
+		color: rgba($color: $text-color, $alpha: 0.6);
+	}
 }
