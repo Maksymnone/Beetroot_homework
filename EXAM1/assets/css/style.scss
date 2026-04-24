@@ -81,6 +81,7 @@ body {
 	@include fzlh(20, 20);
 	letter-spacing: 1.6px;
 	z-index: 2;
+	transition: all 0.3s ease;
 	&::after {
 		content: "";
 		display: inline-block;
@@ -91,6 +92,12 @@ body {
 		right: -7px;
 		background-color: color-mix(in srgb, $btn-color-light, transparent 70%);
 		z-index: -1;
+	}
+	&:hover {
+		color: $btn-color-medium;
+		&::after {
+			background-color: color-mix(in srgb, $btn-color-medium, transparent 70%);
+		}
 	}
 }
 
@@ -124,7 +131,6 @@ header {
 					@include fzlh(14, 24);
 					font-family: $font-text;
 					font-weight: 400;
-
 					&::after {
 						content: "";
 						display: inline-block;
@@ -133,7 +139,6 @@ header {
 						bottom: -10px;
 						left: 0;
 						position: absolute;
-						// background: linear-gradient(to right,#53F3CD,transparent);
 						background-color: color-mix(
 							in srgb,
 							$btn-color-light,
@@ -187,7 +192,6 @@ header {
 	.container {
 		display: flex;
 		justify-content: space-between;
-		// align-items: center;
 		.img-wrap {
 			flex: 1;
 		}
@@ -389,5 +393,65 @@ header {
 		width: 90%;
 		font-weight: 300;
 		color: rgba($color: $text-color, $alpha: 0.6);
+	}
+}
+
+// ===============================PROMISES SECTION STYLE===================================
+
+.promises {
+	.container {
+		display: flex;
+	}
+	.promises-content-wrapper {
+		position: relative;
+		flex: 1;
+		padding: 45px 0;
+	}
+	.promises-content {
+		position: absolute;
+		top: 10%;
+		left: -120px;
+		padding: 75px 0 75px 70px;
+		width: 135%;
+		background-color: rgba(22, 25, 38, 0.9);
+	}
+	.promises-list {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		column-gap: 100px;
+		row-gap: 70px;
+	}
+	.promises-item {
+		h2 {
+			@include fzlh(24,48);
+			font-family: $font-title;
+			font-weight: 400;
+			color: $text-color;
+		}
+		p {
+			@include fzlh(18,26);
+			font-family: $font-text;
+			font-weight: 300;
+			color: color-mix(in srgb, $text-color, transparent 60%);
+		}
+	}
+}
+
+.btn-big-wrap {
+	cursor: pointer;
+	width: 300px;
+	height: 80px;
+	border: 1px solid #515773;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.3s ease;
+	&:hover {
+		border-color:$btn-color-medium ;
+			a {color: $btn-color-medium;
+			&::after {
+				background-color: color-mix(in srgb, $btn-color-medium, transparent 70%);
+			}
+		}
 	}
 }
