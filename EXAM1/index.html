@@ -43,7 +43,7 @@
 			<section class="info-section">
 				<div class="container">
 					<div class="img-wrap">
-						<img src="./assets/images/statistic-image.webp" alt="town and sryscrapers">
+						<img srcset="./assets/images/statistic-image.webp" alt="town and sryscrapers" src="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg==">
 					</div>
 					<div class="info-content">
 						<div class="info-content-inner">
@@ -170,30 +170,45 @@
 				</div>
 			</section>
 			<section class="contacts">
-				<div class="title-wrap">
-					<h2>Contact  <span class="accent-word">our sales team</span></h2>
-					<p>Our team is happy to answer your sales questions. Fill out the form and we’ll be in touch as soon as possible.</p>
-				</div>
-				<div class="form-wrap">
-					<form action="#" method="post">
-						<input type="text" name="user-name">
-						<input type="email" name="user-email">
-						<textarea name="more-text" id=""></textarea>
-						<button type="submit" class="btn-small"> send request</button>
-					</form>
+				<div class="container">
+					<div class="title-wrap">
+						<h2>Contact  <span class="accent-word">our sales team</span></h2>
+						<p><span>Our team is happy to answer your sales questions.</span> Fill out the form and we’ll be in touch as soon as possible.</p>
+					</div>
+					<div class="form-wrap">
+						<form action="#" method="post">
+							<div class="did-floating-label-content">
+								<input class="did-floating-input" type="text" placeholder=" " name="text">
+								<label class="did-floating-label" for="text">Your name</label>
+							</div>
+							<div class="did-floating-label-content">
+								<input class="did-floating-input" type="email" placeholder=" " name="email">
+								<label class="did-floating-label" for="email">Email</label>
+							</div>
+							<div class="did-floating-label-content">
+								<textarea class="did-floating-input" name="textarea" id="" placeholder=" "></textarea>
+								<label class="did-floating-label" for="textarea">Tell more</label>
+							</div>
+							<button type="submit" class="btn-small">send request</button>
+						</form>
+					</div>
 				</div>
 			</section>
 		</main>
 		<footer>
-			<div class="footer-rights">&copy; 2020 Solisgroup. All Rights Reserved.</div>
-			<div class="footer-made-by">made by <span>Zgraya.digital</span></div>
-			<nav>
-				<ul>
-					<li><a href="#">User Agreement</a></li>
-					<li><a href="#">Privacy Policy</a></li>
-				</ul>
-			</nav>
+			<div class="container">
+				<div class="footer-rights">&copy; 2020 Solisgroup. All Rights Reserved.</div>
+				<div class="footer-made-by">made by <span>Zgraya.digital</span></div>
+				<nav>
+					<ul>
+						<li><a href="#">User Agreement</a></li>
+						<li><a href="#">Privacy Policy</a></li>
+					</ul>
+				</nav>
+			</div>
 		</footer>
 	</div>
+	<script src="./assets/js/lazy.min.js"></script>
+	<script src="./assets/js/script.js"></script>
 </body>
 </html>
