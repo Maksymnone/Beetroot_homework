@@ -30,10 +30,10 @@ ol {
 }
 
 img {
-	width: 100%;
-	height: 100%;
+	max-width: 100%;
+	height: auto;
+	display: block;
 	object-fit: cover;
-	vertical-align: top;
 }
 
 a {
@@ -94,8 +94,8 @@ body {
 		position: absolute;
 		width: 100%;
 		height: 13px;
-		bottom: -6px;
-		right: -7px;
+		bottom: -4px;
+		right: -9px;
 		background-color: color-mix(in srgb, $btn-color-light, transparent 70%);
 		z-index: -1;
 	}
@@ -128,7 +128,7 @@ header {
 		ul {
 			display: flex;
 			justify-content: end;
-			gap: 20px;
+			gap: 29px;
 			li {
 				a {
 					position: relative;
@@ -186,7 +186,7 @@ header {
 		font-weight: 300;
 		color: rgba($color: $text-color, $alpha: 0.8);
 		max-width: 439px;
-		margin-bottom: 50px;
+		margin-bottom: 48px;
 	}
 	.btn-small {
 		margin-bottom: 150px;
@@ -195,78 +195,94 @@ header {
 
 //==============================INFO SECTION STYLE============================
 
-.info-section {
-	.container {
-		display: flex;
-		justify-content: space-between;
-		.img-wrap {
-			flex: 1;
-		}
-		.info-content {
-			flex: 1;
-			position: relative;
-			display: flex;
-			align-items: center;
-			padding: 45px 0;
-		}
-	}
-}
 
-.info-content-inner {
-	position: absolute;
-	display: flex;
-	justify-content: space-between;
-	height: 90%;
-	width: 120%;
-	left: -25%;
-	padding: 45px 0;
-	background-color: rgba(22, 25, 38, 0.9);
-	.info-stats,
-	.info-desc {
-		flex: 1 50%;
+.info-section {
+	padding: 4px 0;
+	.info-grid {
+		display: grid;
+		grid-template-columns: repeat(12,1fr);
+		align-items: center;
+	}
+	.info-image {
+		grid-column: 1/7;
+		grid-row: 1;
+		height: 100%;
+	}
+	.info-content-card {
+		height: calc(100% - 90px);
+		grid-column: 5/13;
+		grid-row: 1;
+		background-color: rgba($color: $page-color, $alpha: 0.9);
+		padding: 45px 0;
+		display: flex;
+		margin-left: 10px;
 	}
 	.info-stats {
+		flex:0 0 50%;
 		display: flex;
 		flex-direction: column;
-		align-items: center;
-		color: $text-color;
+		// align-items: center;
+		
 		.stats-item {
-			text-align: center;
-			p:first-child {
-				@include fzlh(68, 72);
+			margin-bottom: 38px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+			&:first-child {
+				padding-left: 100px;
+			}
+			&:nth-child(2) {
+				padding-left: 55px;
+				.stats-item-text {
+					margin-left: 44px
+				}
+				.stats-item-line {
+					margin-left: 80px;
+				}
+			}
+			&:nth-child(3) {
+
+			}
+			&-value {
+				@include fzlh(68,72);
 				font-family: $font-title;
-				margin-bottom: 12px;
+				font-weight: 400;
+				color: $text-color;
+				display: inline-flex;
+				align-items: flex-start;
+				gap: 11px;
+				.dollar-symbol {
+					@include fzlh(40, 50);
+					padding-top: 23px
+            	}
 			}
-			p:nth-of-type(2) {
-				@include fzlh(18, 26);
-				font-weight: 300;
-				color: rgba($color: $text-color, $alpha: 0.6);
-				margin-bottom: 40px;
+			&-text {
+            @include fzlh(18, 26);
+            font-weight: 300;
+            color: rgba($text-color, 0.6);
+            margin-top: 10px;
+			margin-left: 5px;
 			}
-			.stats-item-line {
-				display: inline-block;
+
+			&-line {
+				display: block;
 				width: 100px;
-				border-bottom: 1px solid $line-section-color;
-				margin-bottom: 40px;
+				height: 3px;
+				background-color: $line-section-color;
+				margin: 40px 0 0 35px;
 			}
-		}
-		.dollar-symbol {
-			@include fzlh(40, 50);
-			font-family: $font-title;
-			font-weight: 400;
 		}
 	}
 	.info-desc {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
 		p {
-			@include fzlh(18, 26);
+			@include fzlh(18, 28);
 			font-weight: 300;
-			color: rgba($color: $text-color, $alpha: 0.6);
-		}
-		p:first-child {
-			margin-bottom: 40px;
-		}
-		p:nth-child(2) {
-			margin-bottom: 50px;
+			color: rgba($text-color, 0.7);
+			margin-bottom: 30px;
+			&:last-of-type { margin-bottom: 40px; }
 		}
 	}
 }
@@ -405,64 +421,65 @@ header {
 
 // ===============================PROMISES SECTION STYLE===================================
 
-.promises {
-	.container {
-		display: flex;
-		margin-bottom: 120px;
-	}
-	.promises-content-wrapper {
-		position: relative;
-		flex: 1;
-		padding: 45px 0;
-	}
-	.promises-content {
-		position: absolute;
-		top: 10%;
-		left: -120px;
-		padding: 75px 0 75px 70px;
-		width: 135%;
-		background-color: rgba(22, 25, 38, 0.9);
-	}
-	.promises-list {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		column-gap: 100px;
-		row-gap: 70px;
-	}
-	.promises-item,.reviews {
-		h2 {
-			@include fzlh(24,48);
-			font-family: $font-title;
-			font-weight: 400;
-			color: $text-color;
-		}
-		p {
-			@include fzlh(18,26);
-			font-family: $font-text;
-			font-weight: 300;
-			color: color-mix(in srgb, $text-color, transparent 60%);
-		}
-	}
-}
+// .promises {
+// 	.container {
+// 		display: flex;
+// 		margin-bottom: 120px;
+// 	}
+// 	.promises-content-wrapper {
+// 		position: relative;
+// 		flex: 1;
+// 		padding: 45px 0;
+// 	}
+// 	.promises-content {
+// 		position: absolute;
+// 		top: 10%;
+// 		left: -120px;
+// 		padding: 75px 0 75px 70px;
+// 		max-width: 135%;
+// 		background-color: rgba(22, 25, 38, 0.9);
+// 	}
+// 	.promises-list {
+// 		display: grid;
+// 		grid-template-columns: 1fr 1fr;
+// 		column-gap: 100px;
+// 		row-gap: 70px;
+// 	}
+// 	.promises-item,.reviews {
+// 		h2 {
+// 			@include fzlh(24,48);
+// 			font-family: $font-title;
+// 			font-weight: 400;
+// 			color: $text-color;
+// 		}
+// 		p {
+// 			@include fzlh(18,26);
+// 			font-family: $font-text;
+// 			font-weight: 300;
+// 			color: color-mix(in srgb, $text-color, transparent 60%);
+// 		}
+// 	}
+// }
 
-.btn-big-wrap {
-	cursor: pointer;
-	width: 300px;
-	height: 80px;
-	border: 1px solid #515773;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	transition: all 0.3s ease;
-	&:hover {
-		border-color:$btn-color-medium ;
-			a {color: $btn-color-medium;
-			&::after {
-				background-color: color-mix(in srgb, $btn-color-medium, transparent 70%);
-			}
-		}
-	}
-}
+// .btn-big-wrap {
+// 	cursor: pointer;
+// 	max-width: 300px;
+// 	min-width: 100px;
+// 	height: 80px;
+// 	border: 1px solid #515773;
+// 	display: flex;
+// 	align-items: center;
+// 	justify-content: center;
+// 	transition: all 0.3s ease;
+// 	&:hover {
+// 		border-color:$btn-color-medium ;
+// 			a {color: $btn-color-medium;
+// 			&::after {
+// 				background-color: color-mix(in srgb, $btn-color-medium, transparent 70%);
+// 			}
+// 		}
+// 	}
+// }
 
 // ==================================REVIEWS SECTION STYLE=================================
 
@@ -676,3 +693,6 @@ footer {
 			}
 	 }
 }
+
+
+
