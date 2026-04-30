@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<!-- <script>SCRIPT</script> -->
+	 <!-- <script src="file"></script> -->
+	<link rel="stylesheet" href="./assets/css/fonts.css">
+	<link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+	<div class="greetings section">
+		<p class="greetings-text">
+			Привіт! Давай знайомитись! 
+		</p>
+		<p class="greetings-text-bot">Тицяй на кнопку, щоб познайомитись</p>
+		<button id="hello-btn" onclick = "hello()">Тиць</button>
+	</div>
+	<div class="age-section section section-hidden">
+		<p class="age-text">А тепер мені дуже хочеться дізнатись скільки тобі років.</p>
+		<p class="age-text-bot">Але я дуже люблю рахувати, тому напиши мені в якому році ти народився</p>
+		<button onclick="age()" type="button">Написати рік</button>
+		
+		<span class="age-answer">Твій вік - <span id="inner-age"></span></span>
+	</div>
+	<div class="perimetr-section section section-hidden">
+		<p class="perimetr-text"> А ще я вмію рахувати периметр квадрату і дял цього мені потрібно лише довжина лише однієї сторони, ось скажи мені розмір сторони. </p>
+		<button type="button" onclick="perimetr()">Сказати розмір</button>
+	</div>
+	<div class="circle-section section section-hidden">
+		<p class="circle-text"> А тепер давай мені радіус кола а я тобі площу порахую. </p>
+		<button type="button" onclick="circleSquare()">Сказати радіус</button>
+	</div>
+	<div class="speed-section section section-hidden">
+		<p class="speed-text"> Я вмію рахувати з якою швидкістю ти повинен їхати щоб добратись з одного міста в інше за певний час. </p>
+		<button type="button" onclick="speed()">Сказати відстань і час</button>
+	</div>
+
+	<div class="currency-section section section-hidden">
+		<p class="currency-text"> Я вмію рахувати з якою швидкістю ти повинен їхати щоб добратись з одного міста в інше за певний час. </p>
+		<input name="dollars" type="number" id="dollars">
+		<label for="dollars">Введи кількість долларів</label>
+		<input type="text" name="euro" disabled id="euro"><label for="euro">Кількість євро</label>
+	<button type="button" onclick="exchange()">Розрахувати</button>
+	</div>
+	
+	<script src="/JS-01/assets/js/js.js"></script>
+</body>
+</html>
