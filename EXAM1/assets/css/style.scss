@@ -313,6 +313,9 @@ header {
 		margin-bottom: 30px;
 		width: 80%;
 	}
+	.benefits-card:nth-child(2) .card-title {
+		width: 100%
+	}
 	.card-text {
 		@include fzlh(18, 26);
 		width: 95%;
@@ -433,11 +436,12 @@ header {
 		align-items: center;
 	}
 	.promises-image {
-		grid-column: 1/7;
+		grid-column: 1/8;
 		grid-row: 1;
 	}
 	.promises-content {
-		grid-column: 4/13;
+		margin-left: 10px;
+		grid-column: 5/13;
 		color: #FFF;
 		grid-row: 1;
 		background-color: rgba($color: $page-color, $alpha: 0.9);
@@ -447,7 +451,9 @@ header {
 	.promises-list {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		column-gap: clamp(20px,5vw,100px);
+		column-gap: clamp(20px,8vw,100px);
+		row-gap: clamp(10px,4vw,58px);
+		margin-top: 30px;
 	}
 	.promises-item,.reviews {
 		h2 {
@@ -455,14 +461,19 @@ header {
 			font-family: $font-title;
 			font-weight: 400;
 			color: $text-color;
-			margin-bottom: 15px;
+			margin-bottom: 8px;
 		}
 		p {
 			@include fzlh(18,26);
 			font-family: $font-text;
 			font-weight: 300;
 			color: color-mix(in srgb, $text-color, transparent 60%);
+			margin-bottom: 10px;
 		}
+	}
+	
+	.promises-button-cell {
+		padding-top: 13px;
 	}
 	.btn-big-wrap {
 		cursor: pointer;
@@ -470,8 +481,8 @@ header {
 		justify-content: center;
 		align-items: center;
 		border: 1px solid #515773;
-		width: min(70%, 300px);
-		height: 80px;
+		width: 100%;
+		height: 90px;
 		&:hover {
 		border-color:$btn-color-medium ;
 			a {color: $btn-color-medium;
@@ -541,6 +552,7 @@ header {
 
 .reviews {
 	.container {
+		padding-top: 122px;
 		padding-bottom: 100px
 	}
 	h2 {
@@ -549,6 +561,9 @@ header {
 		font-weight: 400;
 		color: $text-color;
 		margin-bottom: 20px;
+		.accent-word {
+			padding-left: 10px
+		}
 	}
 	.reviews-text {
 		@include fzlh(18, 26);
@@ -556,6 +571,7 @@ header {
 		font-weight: 300;
 		color: rgba($color: $text-color, $alpha: 0.6);
 		margin-bottom: 50px;
+		border-bottom: 1px solid #515773;
 	}
 	.reviews-list {
 		display: flex;
@@ -565,7 +581,7 @@ header {
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
-			padding: 40px 30px;
+			padding: 28px 40px;
 			// height: 340px;
 			blockquote {
 				@include fzlh(16, 26);
@@ -573,7 +589,7 @@ header {
 				font-weight: 400;
 				color: rgba($color: $text-color, $alpha: 0.8);
 				flex-grow: 1;
-				margin-bottom: 20px;
+				margin-bottom: 27px;
 			}
 		}
 		li:first-of-type {
@@ -616,17 +632,22 @@ header {
 	display: flex;
 	justify-content: space-between;
 	gap: 230px;
-	margin-bottom: 100px;
+	margin-bottom: 97px;
+	padding-top: 57px;
 	.title-wrap, .form-wrap {
 		flex: 1 50%;
 	}
 	.title-wrap {
+		padding-top: 25px;
 		h2 {
 			@include fzlh(40,39);
 			font-family: $font-title;
 			font-weight: 400;
 			color: $text-color;
 			margin-bottom: 30px;
+			.accent-word {
+				padding-left: 10px
+			}
 		}
 		p {
 			@include fzlh(18, 26);
@@ -643,7 +664,7 @@ header {
 
 .did-floating-label-content { 
   position:relative; 
-  margin-bottom:40px; 
+  margin-bottom:37px; 
 }
 .did-floating-label {
 	color:color-mix(in srgb, $text-color, transparent 60%); 
@@ -702,6 +723,7 @@ footer {
 		justify-content: space-between;
 		align-items: center;
 		border-top: 1px solid #515773;
+		padding-top: 6px;
 	}
 	.footer-rights,.footer-made-by {
 		@include fzlh(14,26);
@@ -718,7 +740,7 @@ footer {
 
 	 ul {
 		display: flex;
-		gap: 32px;
+		gap: 35px;
 		a {
 			position: relative;
 			width: 100%;
