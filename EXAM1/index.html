@@ -10,10 +10,25 @@
 	<meta name="apple-mobile-web-app-title" content="Solis" />
 	<link rel="manifest" href="./assets/favicon/site.webmanifest" />
 	<link rel="stylesheet" href="./assets/css/fonts.css">
+	<link rel="stylesheet" href="./assets/css/hamb.min.css">
 	<link rel="stylesheet" href="./assets/css/style.min.css">
 	<title>SOLIS</title>
 </head>
 <body>
+	<div class="overlay">
+	</div>
+	<div class="mobile-panel">
+		<nav>
+			<ul>
+				<li><a href="">Home</a></li>
+				<li><a href="">About</a></li>
+				<li><a href="">Products</a></li>
+				<li><a href="">Use Cases</a></li>
+				<li><a href="">Pricing</a></li>
+				<li><a href="">Resources</a></li>
+			</ul>
+		</nav>
+	</div>
 	<div class="page-wrapper">
 		<header>
 			<div class="container">
@@ -30,6 +45,11 @@
 						<li><a href="">Resources</a></li>
 					</ul>
 				</nav>
+				<button class="hamburger hamburger--collapse" type="button" id="hamb-btn">
+					<span class="hamburger-box">
+						<span class="hamburger-inner"></span>
+					</span>
+				</button>
 			</div>
 		</header>
 		<main>
@@ -51,11 +71,15 @@
 								<li class="stats-item">
 									<p class="stats-item-value"><span class="dollar-symbol">$</span> 1 tril</p>
 									<p class="stats-item-text">Market cap potential</p>
+								</li>
+								<li>
 									<span class="stats-item-line"></span>
 								</li>
 								<li class="stats-item">
 									<p class="stats-item-value"><span class="dollar-symbol">$</span> 3.65 mil</p>
 									<p class="stats-item-text">Deposited to platform</p>
+								</li>
+								<li>
 									<span class="stats-item-line"></span>
 								</li>
 								<li class="stats-item">

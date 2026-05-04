@@ -169,6 +169,83 @@ header {
 	cursor: pointer;
 }
 
+
+// ================================MOBILE MENU STYLE===========================
+
+.overlay {
+	position: fixed;
+	width: 100%;
+	height: 100dvh;
+	background-color: rgba($color: #000000, $alpha: 0.5);
+	z-index: 9999;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.3s ease;
+}
+.mobile-panel {
+	position: fixed;
+	text-align: center;
+	width: 100%;
+	background-color: rgba($color: $text-color, $alpha: 0.1);
+	backdrop-filter: blur(10px);
+	z-index: 10000;
+	transform: translateY(-120%);
+	transition: all 0.3s ease;
+	li {
+		padding: 25px 0;
+		cursor: pointer;
+		a {
+			position: relative;
+			width: 100%;
+			color: $text-color;
+			letter-spacing: 1.12px;
+			@include fzlh(24, 34);
+			font-family: $font-text;
+			font-weight: 400;
+			&::after {
+				content: "";
+				display: inline-block;
+				width: 100%;
+				height: 3px;
+				bottom: -10px;
+				left: 0;
+				position: absolute;
+				background-color: color-mix(
+					in srgb,
+					$btn-color-light,
+					transparent 30%
+				);
+				transform: translateX(-50%) scaleX(0);
+				transition: all 0.4s ease;
+			}
+		}
+		&:hover > a::after {
+			transform: translateX(0%) scaleX(1);
+		}
+	}
+}
+
+.hamburger {
+	display: none;
+}
+
+.show {
+	overflow: hidden;
+	height: 100vh;
+	.overlay {
+		opacity: 1;
+		visibility: visible;
+	}
+	header{
+		z-index: 10000;
+	}
+	.mobile-panel {
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(80px);
+	}
+}
+
 // =================================FIRST SECTION STYLE=========================
 
 .first-section {
@@ -220,9 +297,7 @@ header {
 	.info-stats {
 		flex:0 0 48%;
 		display: flex;
-		flex-direction: column;
-		// align-items: center;
-		
+		flex-direction: column;		
 		.stats-item {
 			margin-bottom: 38px;
 			&:last-child {
@@ -235,17 +310,12 @@ header {
 			&:first-child {
 				padding-left: 100px;
 			}
-			&:nth-child(2) {
+			&:nth-child(3) {
 				padding-left: 55px;
 				.stats-item-text {
 					margin-left: 44px
 				}
-				.stats-item-line {
-					margin-left: 80px;
-				}
-			}
-			&:nth-child(3) {
-
+				
 			}
 			&-value {
 				@include fzlh(68,72);
@@ -273,7 +343,7 @@ header {
 				width: 100px;
 				height: 3px;
 				background-color: $line-section-color;
-				margin: 40px 0 0 35px;
+				margin: 0 0 40px 37%;
 			}
 		}
 	}
@@ -493,60 +563,6 @@ header {
 	}
 }
 }
-// 	.promises-content-wrapper {
-// 		position: relative;
-// 		flex: 1;
-// 		padding: 45px 0;
-// 	}
-// 	.promises-content {
-// 		position: absolute;
-// 		top: 10%;
-// 		left: -120px;
-// 		padding: 75px 0 75px 70px;
-// 		max-width: 135%;
-// 		background-color: rgba(22, 25, 38, 0.9);
-// 	}
-// 	.promises-list {
-// 		display: grid;
-// 		grid-template-columns: 1fr 1fr;
-// 		column-gap: 100px;
-// 		row-gap: 70px;
-// 	}
-// 	.promises-item,.reviews {
-// 		h2 {
-// 			@include fzlh(24,48);
-// 			font-family: $font-title;
-// 			font-weight: 400;
-// 			color: $text-color;
-// 		}
-// 		p {
-// 			@include fzlh(18,26);
-// 			font-family: $font-text;
-// 			font-weight: 300;
-// 			color: color-mix(in srgb, $text-color, transparent 60%);
-// 		}
-// 	}
-// }
-
-// .btn-big-wrap {
-// 	cursor: pointer;
-// 	max-width: 300px;
-// 	min-width: 100px;
-// 	height: 80px;
-// 	border: 1px solid #515773;
-// 	display: flex;
-// 	align-items: center;
-// 	justify-content: center;
-// 	transition: all 0.3s ease;
-// 	&:hover {
-// 		border-color:$btn-color-medium ;
-// 			a {color: $btn-color-medium;
-// 			&::after {
-// 				background-color: color-mix(in srgb, $btn-color-medium, transparent 70%);
-// 			}
-// 		}
-// 	}
-// }
 
 // ==================================REVIEWS SECTION STYLE=================================
 
@@ -773,4 +789,165 @@ footer {
 }
 
 
+@media screen and (max-width:1232px) {
+.info-section {
+	padding: 0;
+	.info-image {
+		grid-column: 1/9;
+	}
+	.info-content-card {
+		grid-column: 4/13;
+		padding: 25px 0;
+		align-items: center;
+	}
+	.info-stats {
+		flex:0 0 46%;
+		text-align: center;
+		.stats-item {
+			margin-bottom: 23px;
+			&:last-child {
+				margin-bottom: 0;
+				padding-left: 0px;
+				p:first-child {
+					padding-left: 0px;
+				}
+			}
+			&:first-child {
+				padding-left: 0px;
+				.stats-item-line {
+					margin-left: 35%;
+				}
+			}
+			&:nth-child(3) {
+				padding-left: 0px;
+				.stats-item-text {
+					margin-left: 0px
+				}
+				.stats-item-line {
+					margin-left: 35%;
+				}
+			}
+			&-value {
+				@include fzlh(58,64);
+				gap: 11px;
+				.dollar-symbol {
+					@include fzlh(36, 46);
+					padding-top: 23px
+            	}
+			}
+			&-text {
+            @include fzlh(18, 26);
+            font-weight: 300;
+            color: rgba($text-color, 0.6);
+            margin-top: 10px;
+			margin-left: 5px;
+			}
 
+			&-line {
+				display: block;
+				width: 100px;
+				height: 3px;
+				background-color: $line-section-color;
+				margin: 20px 0 0 37%;
+			}
+		}
+	}
+	.info-desc {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+		p {
+			@include fzlh(18, 26);
+			font-weight: 300;
+			color: rgba($text-color, 0.7);
+			margin-bottom: 20px;
+			&:last-of-type { margin-bottom: 27px; }
+		}
+	}
+}
+
+.promises {
+	.promises-image {
+		grid-column: 1/9;
+	}
+	.promises-content {
+		grid-column: 4/13;
+		padding: 15px 0 15px 30px;
+		align-content: center;
+	}
+	.promises-list {
+		margin-top: 0px;
+	}
+	.promises-item {
+		h2 {
+			margin-bottom: 2px;
+		}
+		p {
+			margin-bottom: 4px;
+		}
+	}	
+	}
+
+	.reviews .reviews-list {
+		gap: 10px;
+	}
+	.reviews .reviews-list li{
+		padding: 20px 20px;
+		blockquote {
+			@include fzlh(14, 24);
+			margin-bottom: 10px;
+		}
+	}
+	.contacts .container {
+		gap: 80px;
+	}
+}
+
+
+@media screen and (max-width:896px) {
+	.page-wrapper {
+		padding-top: 0;
+	}
+
+	.hamburger {
+		display: block;
+	}
+	header {
+	.container {
+		nav {
+			opacity: 0;
+			visibility: hidden;
+		}
+		}
+	}
+	.info-section {
+		.info-grid {
+			grid-template-columns: 1fr;
+			grid-template-rows: repeat(12,1fr);
+			.info-image {
+				grid-row: 1/12;
+				grid-column: 1;
+				img {
+					margin: 0 auto
+				}
+
+			}
+			.info-content-card {
+				padding: 25px;
+				grid-row: 3/12;
+				grid-column: 1;
+				display: flex;
+				flex-direction: column;
+				margin-left: 0px;
+				.info-stats {
+					margin-bottom: 50px;
+				}
+			}
+		}
+	}
+}
+
+
+@media screen and (max-width:544px) {
+	
+}
