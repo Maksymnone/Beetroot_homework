@@ -914,17 +914,17 @@ footer {
 	}
 	header {
 	.container {
+		justify-content: space-between;
 		nav {
-			opacity: 0;
-			visibility: hidden;
+			display: none;
 		}
 		}
 	}
-	.info-section {
-		.info-grid {
+	.info-section,.promises {
+		.info-grid,.promises-grid {
 			grid-template-columns: 1fr;
 			grid-template-rows: repeat(12,1fr);
-			.info-image {
+			.info-image,.promises-image {
 				grid-row: 1/12;
 				grid-column: 1;
 				img {
@@ -941,6 +941,100 @@ footer {
 				margin-left: 0px;
 				.info-stats {
 					margin-bottom: 50px;
+				}
+			}
+		}
+	}
+	.benefits-list {
+		display: flex;
+		flex-direction: column;
+	}
+	.quote-section {
+		.container {
+			padding: 45px;
+			blockquote {
+				&:before {
+					left: -10px;
+					top: -10px;
+					
+					
+				}
+			}
+		}
+		
+	}
+	.reviews {
+		text-align: center;
+		.reviews-text {
+			max-width: 100%;
+		}
+		.reviews-list {
+		flex-direction: column;
+		align-items: center;
+		.reviews-item.reviews-item {
+			margin-bottom: 25px;
+			display: block;
+			width: 90%;
+			min-height: 200px;
+			background-size: cover;
+			blockquote {
+				max-width: 100%;
+			}
+		}
+	}
+	}
+	.promises {
+		.promises-grid {
+			align-items: start;
+			.promises-content {
+				padding: 25px;
+				grid-row: 3/12;
+				grid-column: 1;
+				margin-left: 0px;
+				.promises-list {
+					grid-template-columns: 1fr;
+					.promises-item {
+						text-align: center;
+						&:not(:nth-child(3))::after {
+							content: "";
+							display: block;
+							width: 50%;
+							margin: 0 auto;
+							height: 2px;
+							background-color: #85bbb1;
+							margin-top: 20px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.contacts {
+		.title-wrap {
+			text-align: center;
+		}
+		.container {
+			flex-direction: column;
+			gap: 40px;
+		}
+	}
+
+	.contacts .container .title-wrap p {
+		max-width: 100%;
+	}
+
+	footer {
+		height: auto;
+		.container {
+			flex-direction: column-reverse;
+			padding: 35px;
+			ul {
+				flex-direction: column;
+				gap: 15px;
+				margin-bottom: 25px;
+				text-align: center;
+				a {
+					@include fzlh(20,30);
 				}
 			}
 		}
