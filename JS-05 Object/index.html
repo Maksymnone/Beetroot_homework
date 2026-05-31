@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="./Assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./Assets/css/style.min.css">
+</head>
+<body>
+	<div class="container border-bottom pb-4 mb-4">
+		<h2>Car info</h2>
+		<dl id="info-list" class="border-bottom">
+	
+		</dl>
+		<button onclick="myCar.showInfo('info-list')" class="mb-5 btn-secondary">Car Info</button>
+		<div class="add-driver">
+			<input type="text" id="addDriver_input">
+			<label for="addDriver_input">Enter driver name</label>
+			<button type="button" id="addDriver_btn" class="btn-secondary">Add</button>
+		</div>
+	</div>
+	<div id="trip_Parametrs" class="container border-bottom pb-4 mb-4">
+		<h2>Trip parametrs</h2>
+		<input type="text" id="tripDistance_input">
+		<label for="tripDistance_input">Enter trip distance</label>
+		<button type="button" id="tripParametrs_btn" class="btn-secondary">Enter</button>
+		<h3>For this trip you need</h3>
+	</div>
+	<div class="container d-flex justify-content-start align-items-center">
+		<div class="showtime-wrapper bg-body-secondary text-xl-center fw-bold">
+		</div>
+		<button type="button" id="showtime_btn" class="btn btn-secondary">Show time</button>
+	</div>
+	<form class="container">
+		<div class="mb-3">
+			<label class="form-label">Введіть час для додавання:</label>
+    
+			<input type="text" class="form-control mb-2" id="addHoursInput" placeholder="Години">
+			
+			<input type="text" class="form-control mb-2" id="addMinutesInput" placeholder="Хвилини">
+			
+			<input type="text" class="form-control mb-2" id="addSecondsInput" placeholder="Секунди">
+		</div>
+		<button type="submit" id="addTime_btn" class="btn btn-secondary">Додати</button>
+	</form>
+	<script src="./Assets/js/myToast.js"></script>
+	<script src="./Assets/js/bootstrap.min.js"></script>
+	<script src="./Assets/js/script.js"></script>
+</body>
+</html>
